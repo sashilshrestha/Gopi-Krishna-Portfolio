@@ -9296,9 +9296,6 @@
 	  }
 	})();
 
-	// Add your JS customizations here
-	console.log("Demo");
-
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
