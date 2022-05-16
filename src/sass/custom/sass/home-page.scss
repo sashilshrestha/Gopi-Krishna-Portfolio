@@ -1,0 +1,488 @@
+main {
+	&#homePage {
+		section.main-slider {
+			@include padding(170, 0, 170, 0);
+			background-color: $darker;
+
+			.container {
+				.carousel {
+					.carousel-inner {
+						overflow: visible;
+						.carousel-item {
+							.row {
+								justify-content: space-between;
+
+								img {
+									@include width(616);
+									max-width: #{toRem(616)};
+									@include height(392);
+									border-radius: #{toRem(20)};
+									object-fit: cover;
+								}
+
+								.carousel-info {
+									display: flex;
+									justify-content: center;
+									flex-direction: column;
+
+									h2 {
+										font-weight: 700;
+										@include font-size(52);
+										// letter-spacing: #{toRem(-1)};
+										line-height: 100%;
+										@include margin(0, 0, 10, 0);
+									}
+									p {
+										@include font-size(22);
+										line-height: 120%;
+										@include margin(0, 0, 20, 0);
+									}
+									span.read-more {
+										a {
+											background-color: $primary;
+											display: inline;
+											@include padding(10, 18, 10, 18);
+											color: $darker;
+											border-radius: #{toRem(6)};
+											@include font-size(16);
+											transition: all 0.2s ease-in-out;
+											position: relative;
+										}
+										&:hover {
+											transform: translateY(#{toRem(-2)});
+										}
+									}
+								}
+
+								@include set(991) {
+									flex-direction: column-reverse;
+
+									img {
+										width: 100%;
+										max-width: 100%;
+										max-height: 20rem;
+										object-fit: cover;
+										@include margin(0, 0, 20, 0);
+									}
+
+									.carousel-info {
+										max-width: 100%;
+									}
+								}
+							}
+						}
+					}
+					.carousel-indicators {
+						bottom: #{toRem(-90)};
+						li {
+							@include width(16);
+							@include height(16);
+							background-color: $primary;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+		}
+
+		section.featured-posts {
+			.container {
+				top: -4rem;
+				position: relative;
+				width: 100%;
+
+				.splide__list {
+					.splide__slide {
+						.ft-card {
+							max-height: #{toRem(254)};
+							height: 100%;
+							position: relative;
+
+							img {
+								width: 100%;
+								height: 100%;
+								min-height: #{toRem(254)};
+								object-fit: cover;
+								border-radius: #{toRem(10)};
+							}
+
+							h3 {
+								position: absolute;
+								bottom: #{toRem(5)};
+								@include padding(0, 16, 0, 16);
+								@include font-size(23);
+								font-weight: 700;
+								line-height: 130%;
+								color: white;
+								z-index: 1;
+								transition: all 0.2s ease-in-out;
+							}
+
+							.bg-overlay {
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								border-radius: #{toRem(10)};
+								background: rgb(9, 59, 75);
+								background: linear-gradient(
+									360deg,
+									rgba($darker, 0.98) 0%,
+									rgba($primary, 0.5) 100%
+								);
+							}
+
+							&:hover {
+								h3 {
+									transform: translateY(#{toRem(-8)});
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		section.trending-slider {
+			@include margin(0, 0, 45, 0);
+			display: none;
+			.container {
+				.row {
+					border: 1px solid #dddddd;
+					padding: 0.5rem 0rem;
+					border-radius: 10px;
+					align-items: center;
+
+					.tr-topic {
+						p {
+							color: $primary;
+							@include font-size(18);
+							margin: 0;
+						}
+					}
+					.tr-slide {
+						.carousel {
+							@include padding(0, 90, 0, 0);
+							.carousel-inner {
+								.carousel-item {
+									.carousel-info {
+										h2 {
+											@include font-size(21);
+											font-weight: 700;
+											margin: 0;
+											color: #3f4244;
+										}
+									}
+								}
+							}
+							a {
+								width: fit-content;
+								background-color: $primary;
+								height: 30px;
+								width: 30px;
+								border-radius: 50%;
+
+								&.carousel-control-prev {
+									left: 94%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		section.latest-news {
+			.container {
+				.row {
+					.main-container {
+						.latest-title {
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-end;
+							border-bottom: 1px solid $text;
+							@include padding(0, 0, 20, 0);
+							@include margin(0, 0, 25, 0);
+
+							h2 {
+								margin: 0;
+								font-weight: 700;
+							}
+							a {
+								color: $secondary;
+							}
+						}
+
+						.news-container {
+							.big-news {
+								display: flex;
+								flex-wrap: wrap;
+								justify-content: space-between;
+
+								.news-card {
+									position: relative;
+									display: flex;
+									align-items: flex-end;
+									@include margin(0, 0, 46, 0);
+									box-shadow: 0px 4px 20px #00000067;
+
+									.news-info {
+										position: relative;
+										z-index: 2;
+										@include padding(0, 25, 20, 25);
+										.topic {
+											span {
+												@include font-size(14);
+												background-color: $primary;
+												color: $dark;
+												text-transform: uppercase;
+												@include padding(4, 10, 4, 10);
+												border-radius: #{toRem(4)};
+												list-style: none;
+												font-weight: 500;
+											}
+										}
+										.title {
+											h1 {
+												@include margin(8, 0, 0, 0);
+												color: white;
+												@include font-size(30);
+												line-height: 120%;
+											}
+										}
+									}
+									.bg-overlay {
+										position: absolute;
+										top: 0;
+										left: 0;
+										width: 100%;
+										height: 100%;
+										border-radius: #{toRem(10)};
+										background: rgb(9, 59, 75);
+										background: linear-gradient(
+											360deg,
+											rgba(9, 59, 75, 1) 0%,
+											rgba(44, 190, 239, 0) 100%
+										);
+										z-index: 1;
+									}
+									img {
+										position: absolute;
+										top: 0;
+										left: 0;
+										width: 100%;
+										height: 100%;
+										object-fit: cover;
+										border-radius: #{toRem(10)};
+									}
+
+									&:nth-child(1) {
+										width: 100%;
+										@include height(316);
+									}
+									&:nth-child(2) {
+										width: 48%;
+										@include height(316);
+
+										@include set(500) {
+											width: 100%;
+										}
+									}
+									&:nth-child(3) {
+										width: 48%;
+										@include height(316);
+
+										@include set(500) {
+											width: 100%;
+										}
+									}
+
+									&:hover {
+										.news-info {
+											transform: translateY(#{toRem(-8)});
+										}
+									}
+								}
+							}
+							.small-news {
+								.news-card {
+									display: flex;
+									@include margin(0, 0, 46, 0);
+
+									img {
+										min-width: #{toRem(320)};
+										width: #{toRem(320)};
+										min-height: #{toRem(180)};
+										height: #{toRem(180)};
+										border-radius: #{toRem(10)};
+										object-fit: cover;
+
+										@include set(1920) {
+											// height: auto;
+											// min-height: 100%;
+										}
+
+										@include set(500) {
+											width: 100%;
+											@include margin(0, 0, 15, 0);
+											height: 16rem;
+										}
+									}
+									.news-info {
+										@include padding(0, 0, 0, 18);
+										.topic {
+											span {
+												@include font-size(14);
+												background-color: $primary;
+												color: $dark;
+												text-transform: uppercase;
+												@include padding(4, 10, 4, 10);
+												border-radius: #{toRem(4)};
+												font-weight: 500;
+											}
+										}
+										.title {
+											h1 {
+												@include font-size(31);
+												letter-spacing: #{toRem(-1)};
+												line-height: 105%;
+												@include margin(8, 0, 8, 0);
+											}
+										}
+										.desc {
+											@include font-size(18);
+											line-height: 120%;
+											@include margin(0, 0, 5, 0);
+											color: $text;
+										}
+										.pub-date {
+											color: $secondary;
+											@include font-size(16);
+										}
+
+										@include set(500) {
+											padding: 0;
+										}
+									}
+
+									@include set(500) {
+										flex-direction: column;
+									}
+								}
+							}
+						}
+
+						@include set(991) {
+							max-width: 100%;
+							flex: 0 0 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+main {
+	&#nextPage {
+		section.latest-news {
+			.container {
+				.row {
+					.main-container {
+						.latest-title {
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-end;
+							border-bottom: 1px solid $text;
+							@include padding(0, 0, 20, 0);
+							@include margin(0, 0, 25, 0);
+
+							h2 {
+								margin: 0;
+								font-weight: 700;
+							}
+							a {
+								color: $secondary;
+							}
+						}
+
+						.news-container {
+							.small-news {
+								@include margin(128, 0, 0, 0);
+								.news-card {
+									display: flex;
+									@include margin(0, 0, 46, 0);
+
+									img {
+										min-width: #{toRem(320)};
+										width: #{toRem(320)};
+										min-height: #{toRem(180)};
+										height: #{toRem(180)};
+										border-radius: #{toRem(10)};
+										object-fit: cover;
+
+										@include set(1920) {
+											// height: auto;
+											// min-height: 100%;
+										}
+
+										@include set(500) {
+											width: 100%;
+											@include margin(0, 0, 15, 0);
+											height: 16rem;
+										}
+									}
+									.news-info {
+										@include padding(0, 0, 0, 18);
+										.topic {
+											span {
+												@include font-size(14);
+												background-color: $primary;
+												color: $dark;
+												text-transform: uppercase;
+												@include padding(4, 10, 4, 10);
+												border-radius: #{toRem(4)};
+												font-weight: 500;
+											}
+										}
+										.title {
+											h1 {
+												@include font-size(31);
+												letter-spacing: #{toRem(-1)};
+												line-height: 105%;
+												@include margin(8, 0, 8, 0);
+											}
+										}
+										.desc {
+											@include font-size(18);
+											line-height: 120%;
+											@include margin(0, 0, 5, 0);
+											color: $text;
+										}
+										.pub-date {
+											color: $secondary;
+											@include font-size(16);
+										}
+
+										@include set(500) {
+											padding: 0;
+										}
+									}
+
+									@include set(500) {
+										flex-direction: column;
+									}
+								}
+							}
+						}
+
+						@include set(991) {
+							max-width: 100%;
+							flex: 0 0 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
