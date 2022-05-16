@@ -22,14 +22,14 @@ defined('ABSPATH') || exit;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
+<body <?php body_class(); ?>>
 	<?php do_action('wp_body_open'); ?>
 	<div class="site" id="page">
 
 		<!-- ******************* The Navbar Area ******************* -->
 		<header id="wrapper-navbar">
 			<div class="container">
-				<h3>This is Header</h3>
+				<h1 class="py-5">Header Section</h1>
 			</div>
-
-		</header><!-- #wrapper-navbar end -->
+		</header>
+		<!-- #wrapper-navbar end -->

@@ -1,0 +1,52 @@
+* {
+	font-family: "Neue" !important;
+	font-weight: 300;
+}
+
+body {
+	font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+strong {
+	font-weight: 700;
+}
+
+// Neue
+@font-face {
+	font-family: "Neue";
+	font-style: normal;
+	font-weight: 900;
+	src: local(""), url("../fonts/NeueHelveticaBQBlack.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Neue";
+	font-style: normal;
+	font-weight: 700;
+	src: local(""), url("../fonts/NeueHelveticaBQBold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Neue";
+	font-style: normal;
+	font-weight: 800;
+	src: local(""), url("../fonts/NeueHelveticaBQHeavy.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Neue";
+	font-style: normal;
+	font-weight: 300;
+	src: local(""), url("../fonts/NeueHelveticaBQLight.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Neue";
+	font-style: normal;
+	font-weight: 500;
+	src: local(""), url("../fonts/NeueHelveticaBQMedium.otf") format("opentype");
+}
