@@ -6,7 +6,7 @@ header {
 			align-items: center;
 			min-height: #{toRem(100)};
 
-			.menu-primary-menu-container {
+			.menu-primary-container {
 				.nav-links {
 					display: flex;
 					justify-content: flex-end;
@@ -58,7 +58,7 @@ header {
 
 			// Media Query
 			@include set(768) {
-				.menu-primary-menu-container {
+				.menu-primary-container {
 					.nav-links {
 						padding: 0;
 						position: fixed;
