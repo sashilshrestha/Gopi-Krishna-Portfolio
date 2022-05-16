@@ -1,2 +1,110 @@
-nav {
+header {
+	nav {
+		div.container {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			min-height: #{toRem(100)};
+
+			.menu-primary-container {
+				.nav-links {
+					display: flex;
+					justify-content: flex-end;
+					padding: 0;
+					margin: 0;
+
+					.menu-item {
+						list-style: none;
+						&.current-menu-item {
+							a {
+								border-bottom: 2px solid $black;
+							}
+						}
+						a {
+							text-decoration: none;
+							@include padding(10, 5, 3, 5);
+							@include margin(0, 10, 0, 10);
+							@include font-size(21);
+							color: $black;
+							font-weight: 500;
+
+							@include set(555) {
+								@include font-size(36);
+							}
+						}
+					}
+
+					&.nav-active {
+						@include set(555) {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.ham-burger {
+				display: none;
+				z-index: 999;
+				.all-lines {
+					.line {
+						width: 25px;
+						height: 3px;
+						background-color: $black;
+						margin: 5px;
+						transition: all 0.3s ease;
+					}
+				}
+			}
+
+			// Media Query
+			@include set(768) {
+				.menu-primary-container {
+					.nav-links {
+						padding: 0;
+						position: fixed;
+						height: 100vh;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						background-color: rgb(255, 242, 242);
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						width: 80%;
+						align-items: center;
+						transform: translateX(100%);
+						transition: transform 0.2s ease-in-out;
+						z-index: 2;
+
+						&.nav-active {
+							transform: translateX(0);
+
+							.menu-item {
+								@include margin(12, 0, 12, 0);
+							}
+						}
+					}
+				}
+				.ham-burger {
+					display: block;
+					.all-lines {
+						&.toggle {
+							.line1 {
+								transform: rotate(-45deg) translate(-5px, 6px);
+								background-color: $dark;
+							}
+
+							.line2 {
+								opacity: 0;
+							}
+							.line3 {
+								transform: rotate(45deg) translate(-5px, -6px);
+								background-color: $dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

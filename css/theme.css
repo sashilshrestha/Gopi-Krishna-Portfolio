@@ -16849,6 +16849,117 @@ strong {
 }
 /*Convertion Ration sp to rem for html */
 /* 6. Header */
+header nav div.container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 6.25rem;
+}
+header nav div.container .menu-primary-container .nav-links {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+header nav div.container .menu-primary-container .nav-links .menu-item {
+  list-style: none;
+}
+header nav div.container .menu-primary-container .nav-links .menu-item.current-menu-item a {
+  border-bottom: 2px solid #281232;
+}
+header nav div.container .menu-primary-container .nav-links .menu-item a {
+  text-decoration: none;
+  padding: 0.625rem 0.3125rem 0.1875rem 0.3125rem;
+  margin: 0rem 0.625rem 0rem 0.625rem;
+  font-size: 1.3125rem;
+  color: #281232;
+  font-weight: 500;
+}
+@media screen and (max-width: 555px) {
+  header nav div.container .menu-primary-container .nav-links .menu-item a {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 555px) {
+  header nav div.container .menu-primary-container .nav-links.nav-active {
+    width: 100%;
+  }
+}
+header nav div.container .ham-burger {
+  display: none;
+  z-index: 999;
+}
+header nav div.container .ham-burger .all-lines .line {
+  width: 25px;
+  height: 3px;
+  background-color: #281232;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  header nav div.container .menu-primary-container .nav-links {
+    padding: 0;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff2f2;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 80%;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    z-index: 2;
+  }
+  header nav div.container .menu-primary-container .nav-links.nav-active {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  header nav div.container .menu-primary-container .nav-links.nav-active .menu-item {
+    margin: 0.75rem 0rem 0.75rem 0rem;
+  }
+  header nav div.container .ham-burger {
+    display: block;
+  }
+  header nav div.container .ham-burger .all-lines.toggle .line1 {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #212529;
+  }
+  header nav div.container .ham-burger .all-lines.toggle .line2 {
+    opacity: 0;
+  }
+  header nav div.container .ham-burger .all-lines.toggle .line3 {
+    -webkit-transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #212529;
+  }
+}
+
 * {
   transition: all 0.2s ease-in-out;
 }

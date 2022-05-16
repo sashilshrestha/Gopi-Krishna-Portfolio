@@ -28,8 +28,32 @@ defined('ABSPATH') || exit;
 
 		<!-- ******************* The Navbar Area ******************* -->
 		<header id="wrapper-navbar">
-			<div class="container">
-				<h1 class="py-5">Header Section</h1>
-			</div>
+			<nav id="main-nav">
+				<div class="container">
+					<!-- The WordPress Menu goes here -->
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => '',
+							'container_id'    => '',
+							'menu_class'      => 'nav-links',
+							'fallback_cb'     => '',
+							'menu_id'         => '',
+							'depth'           => 2,
+							// 'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+						)
+					);
+					?>
+					<div class="ham-burger">
+						<div class="all-lines">
+							<div class="line line1"></div>
+							<div class="line line2"></div>
+							<div class="line line3"></div>
+						</div>
+					</div>
+					<div class="blur-bg"></div>
+				</div><!-- .container -->
+			</nav>
 		</header>
 		<!-- #wrapper-navbar end -->
