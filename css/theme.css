@@ -16857,6 +16857,18 @@ body {
   overflow-x: hidden;
 }
 
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  margin: 0;
+}
+
 /* 7. Footer */
 /* 8. Mediaquery */
 @media screen and (min-width: 1200px) {
