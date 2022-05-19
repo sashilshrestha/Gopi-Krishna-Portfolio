@@ -1,12 +1,32 @@
 <?php get_header() ?>
-<div class="py-5">
-    <div class="your-class">
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
-        <div><img src="https://images.unsplash.com/photo-1652911942944-572e532c8cf2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt=""></div>
+<main id="front-page">
+    <div class="py-5">
+        <div class="your-class">
+            <!-- Post Calling Loop Started -->
+            <?php
+            $args = array(
+                'post_type' => 'slider',
+                'posts_per_page' => -1,
+                'order' => 'ASC',
+                'orderby' => 'menu_order',
+            );
+            $allposts = new WP_Query($args);
+
+            while ($allposts->have_posts()) :
+                $allposts->the_post();
+                // For Image Call
+                $thumb_id = get_post_thumbnail_id();
+                $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+            ?>
+                <!-- Loop Started -->
+                <img src="<?php echo $thumb_url[0] ?>" alt="">
+                <!-- Loop Ended -->
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+            <!-- Post Calling Loop Ends -->
+        </div>
     </div>
-</div>
+</main>
 <?php get_footer() ?>

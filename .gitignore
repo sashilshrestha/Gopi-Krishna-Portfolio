@@ -53,5 +53,9 @@ phpcs.xml
 dist/
 dist-product/
 **/img
+
 src/js/**
 src/css/**
+
+js/
+css/
