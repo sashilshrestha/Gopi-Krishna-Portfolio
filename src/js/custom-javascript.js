@@ -1,4 +1,6 @@
 // Add your JS customizations here
+import "./custom-slick";
+
 const navSlide = () => {
 	const burger = document.querySelector(".all-lines");
 	const nav = document.querySelector(".nav-links");
