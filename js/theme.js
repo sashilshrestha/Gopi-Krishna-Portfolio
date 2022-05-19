@@ -12307,7 +12307,7 @@
 	}(slick));
 
 	jQuery(document).ready(function ($) {
-	  $(".your-class").slick({
+	  $(".img--slider").slick({
 	    centerMode: true,
 	    centerPadding: "60px",
 	    slidesToShow: 3,
@@ -12315,6 +12315,7 @@
 	    responsive: [{
 	      breakpoint: 550,
 	      settings: {
+	        centerPadding: "0px",
 	        arrows: false,
 	        centerMode: true,
 	        slidesToShow: 1

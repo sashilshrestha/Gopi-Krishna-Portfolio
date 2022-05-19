@@ -16849,13 +16849,16 @@ strong {
 }
 /*Convertion Ration sp to rem for html */
 /* 6. Header */
+header {
+  background-color: #fff6ff;
+}
 header nav div.container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -17041,60 +17044,114 @@ h5,
   }
 }
 /* 9. Content */
-main#front-page .your-class .slick-list {
+main#front-page {
+  background-color: #fff6ff;
+}
+main#front-page .container .hero {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5rem 0rem 4rem 0rem;
+}
+main#front-page .container .hero h5, main#front-page .container .hero .h5 {
+  font-size: 3.10625rem;
+  background: linear-gradient(90deg, #362057, #ab397a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  letter-spacing: -0.1875rem;
+}
+main#front-page .container .hero h1, main#front-page .container .hero .h1 {
+  font-size: 5.525rem;
+  background: linear-gradient(90deg, #362057, #ab397a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.25rem;
+  margin: 0rem 0rem 1.25rem 0rem;
+}
+main#front-page .container .hero h4 span, main#front-page .container .hero .h4 span {
+  font-size: 2.33125rem;
+  padding: 0rem 1.25rem 0rem 1.25rem;
+}
+main#front-page .container .hero h4 span:not(:last-of-type), main#front-page .container .hero .h4 span:not(:last-of-type) {
+  border-right: 1px solid #642e7c;
+}
+main#front-page .img--slider {
+  height: 38rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main#front-page .img--slider .slick-list {
   height: auto;
 }
-main#front-page .your-class .slick-list .slick-track {
+main#front-page .img--slider .slick-list .slick-track {
   height: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-main#front-page .your-class .slick-list .slick-track .slick-slide {
+main#front-page .img--slider .slick-list .slick-track .slick-slide {
   margin: 0rem 1.25rem 0rem 1.25rem;
   height: 19.8125rem !important;
 }
-main#front-page .your-class .slick-list .slick-track .slick-slide div {
+main#front-page .img--slider .slick-list .slick-track .slick-slide div {
   top: 50%;
   position: relative;
   height: 100%;
   -webkit-transform: translateY(-25%);
   transform: translateY(-25%);
 }
-main#front-page .your-class .slick-list .slick-track .slick-slide div img {
+main#front-page .img--slider .slick-list .slick-track .slick-slide div img {
   width: 100%;
   height: inherit;
   -o-object-fit: cover;
   object-fit: cover;
 }
-main#front-page .your-class .slick-list .slick-track .slick-slide.slick-center {
+main#front-page .img--slider .slick-list .slick-track .slick-slide.slick-center {
   height: 28.75rem !important;
 }
-main#front-page .your-class .slick-list .slick-track .slick-slide.slick-center div {
+main#front-page .img--slider .slick-list .slick-track .slick-slide.slick-center div {
   top: 0;
   position: relative;
   height: 100%;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-main#front-page .your-class .slick-arrow {
+main#front-page .img--slider .slick-arrow {
   width: 15%;
   height: 100%;
   z-index: 999;
 }
-main#front-page .your-class .slick-arrow.slick-next {
-  background: white;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 100%);
+main#front-page .img--slider .slick-arrow.slick-next {
+  background: #fff6ff;
+  background: linear-gradient(90deg, rgba(255, 246, 255, 0) 0%, #fff6ff 100%);
   right: 0;
 }
-main#front-page .your-class .slick-arrow.slick-prev {
-  background: white;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, white 100%);
+main#front-page .img--slider .slick-arrow.slick-prev {
+  background: #fff6ff;
+  background: linear-gradient(270deg, rgba(255, 246, 255, 0) 0%, #fff6ff 100%);
   left: 0;
 }
 
 @media screen and (min-width: 550px) {
-  .slick-center {
+  .slick-slide {
+    margin: 0rem 0.625rem 0rem 0.625rem;
+  }
+  .slick-slide .slick-center {
     width: 43.125rem !important;
   }
 }
