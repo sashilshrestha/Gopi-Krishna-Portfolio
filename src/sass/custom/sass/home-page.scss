@@ -1,101 +1,126 @@
 main#front-page {
-	background-color: $light;
-	.container {
-		.hero {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			@include padding(80, 0, 64, 0);
-			h5 {
-				@include font-size(49.7);
-				background: linear-gradient(90deg, #362057, $secondary);
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-weight: 900;
-				letter-spacing: #{toRem(-3)};
-			}
-			h1 {
-				@include font-size(88.4);
-				background: linear-gradient(90deg, #362057, $secondary);
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-weight: 900;
-				text-transform: uppercase;
-				letter-spacing: #{toRem(-4)};
-				@include margin(0, 0, 20, 0);
-			}
-			h4 {
-				span {
-					@include font-size(37.3);
-					@include padding(0, 20, 0, 20);
-                    
-					&:not(:last-of-type) {
-						border-right: 1px solid $primary;
+	.hero--section {
+		background-color: $light;
+		.container {
+			.hero {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				@include padding(80, 0, 64, 0);
+				h5 {
+					@include font-size(49.7);
+					background: linear-gradient(90deg, #362057, $secondary);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					font-weight: 900;
+					letter-spacing: #{toRem(-3)};
+				}
+				h1 {
+					@include font-size(88.4);
+					background: linear-gradient(90deg, #362057, $secondary);
+					background-clip: text;
+					-webkit-text-fill-color: transparent;
+					font-weight: 900;
+					text-transform: uppercase;
+					letter-spacing: #{toRem(-4)};
+					@include margin(0, 0, 20, 0);
+				}
+				h4 {
+					span {
+						@include font-size(37.3);
+						@include padding(0, 20, 0, 20);
+
+						&:not(:last-of-type) {
+							border-right: 1px solid $primary;
+						}
 					}
+				}
+			}
+		}
+		.img--slider {
+			height: 38rem;
+			display: flex;
+			align-items: center;
+
+			.slick-list {
+				height: auto;
+				.slick-track {
+					height: 100%;
+					display: flex;
+					.slick-slide {
+						@include margin(0, 20, 0, 20);
+						height: #{toRem(317)} !important;
+						div {
+							top: 50%;
+							position: relative;
+							height: 100%;
+							transform: translateY(-25%);
+							img {
+								width: 100%;
+								height: inherit;
+								object-fit: cover;
+							}
+						}
+
+						&.slick-center {
+							height: #{toRem(460)} !important;
+
+							div {
+								top: 0;
+								position: relative;
+								height: 100%;
+								transform: translateY(0);
+							}
+						}
+					}
+				}
+			}
+			.slick-arrow {
+				width: 15%;
+				height: 100%;
+				z-index: 999;
+
+				&.slick-next {
+					background: $light;
+					background: linear-gradient(
+						90deg,
+						rgba($light, 0) 0%,
+						rgba($light, 1) 100%
+					);
+					right: 0;
+				}
+				&.slick-prev {
+					background: $light;
+					background: linear-gradient(
+						270deg,
+						rgba($light, 0) 0%,
+						rgba($light, 1) 100%
+					);
+					left: 0;
 				}
 			}
 		}
 	}
-	.img--slider {
-		height: 38rem;
-		display: flex;
-		align-items: center;
-
-		.slick-list {
-			height: auto;
-			.slick-track {
-				height: 100%;
-				display: flex;
-				.slick-slide {
-					@include margin(0, 20, 0, 20);
-					height: #{toRem(317)} !important;
-					div {
-						top: 50%;
-						position: relative;
-						height: 100%;
-						transform: translateY(-25%);
-						img {
-							width: 100%;
-							height: inherit;
-							object-fit: cover;
-						}
+	.about--container {
+		.container {
+			.row {
+				.col-md-6 {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					h1 {
+						@include font-size(49.7);
+						background: linear-gradient(90deg, #362057, $secondary);
+						background-clip: text;
+						-webkit-text-fill-color: transparent;
+						font-weight: 900;
+						letter-spacing: #{toRem(-3)};
 					}
-
-					&.slick-center {
-						height: #{toRem(460)} !important;
-
-						div {
-							top: 0;
-							position: relative;
-							height: 100%;
-							transform: translateY(0);
-						}
+					p {
+						@include font-size(21);
+						line-height: 140;
 					}
 				}
-			}
-		}
-		.slick-arrow {
-			width: 15%;
-			height: 100%;
-			z-index: 999;
-
-			&.slick-next {
-				background: $light;
-				background: linear-gradient(
-					90deg,
-					rgba($light, 0) 0%,
-					rgba($light, 1) 100%
-				);
-				right: 0;
-			}
-			&.slick-prev {
-				background: $light;
-				background: linear-gradient(
-					270deg,
-					rgba($light, 0) 0%,
-					rgba($light, 1) 100%
-				);
-				left: 0;
 			}
 		}
 	}

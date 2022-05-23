@@ -12,3 +12,16 @@ h4,
 h5 {
 	margin: 0;
 }
+
+.btn {
+	@include font-size(21);
+	font-weight: 900;
+	text-transform: uppercase;
+	@include padding(15, 28, 15, 28);
+	border: none;
+
+	&.btn-primary {
+		background-color: $primary;
+		color: $white;
+	}
+}
