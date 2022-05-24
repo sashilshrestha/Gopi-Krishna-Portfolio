@@ -40,14 +40,28 @@
     <div class="about--section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 about--section--info">
                     <h1>About Me</h1>
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </p>
-                    <a href="" class="btn btn-primary">Read More</a>
+                    <div>
+                        <a href="" class="btn btn-primary">Read More</a>
+                    </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 about--section--img">
                     <?php $themefile = get_template_directory_uri(); ?>
                     <img src="<?php echo $themefile; ?>/assets/images/about-section-profile.png" alt="">
+                    <div class="interviews">
+                        <h1 class="counter" data-count="1000">1000+</h1>
+                        <h5>Video Interviews</h5>
+                    </div>
+                    <div class="news">
+                        <h1 class="counter" data-count="1000">1000+</h1>
+                        <h5>News</h5>
+                    </div>
+                    <div class="media">
+                        <h1 class="counter" data-count="300">300+</h1>
+                        <h5>Media</h5>
+                    </div>
                 </div>
             </div>
         </div>

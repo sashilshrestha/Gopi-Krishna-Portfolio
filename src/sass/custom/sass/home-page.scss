@@ -101,24 +101,103 @@ main#front-page {
 			}
 		}
 	}
-	.about--container {
+	.about--section {
+		@include padding(100, 0, 100, 0);
 		.container {
 			.row {
 				.col-md-6 {
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					h1 {
-						@include font-size(49.7);
-						background: linear-gradient(90deg, #362057, $secondary);
-						background-clip: text;
-						-webkit-text-fill-color: transparent;
-						font-weight: 900;
-						letter-spacing: #{toRem(-3)};
+
+					&.about--section--info {
+						h1 {
+							position: relative;
+							@include font-size(49.7);
+							background: linear-gradient(90deg, #362057, $secondary);
+							background-clip: text;
+							-webkit-text-fill-color: transparent;
+							font-weight: 900;
+							letter-spacing: #{toRem(-1)};
+							width: fit-content;
+							@include margin(0, 0, 50, 0);
+
+							&::after {
+								content: "";
+								position: absolute;
+								height: #{toRem(10)};
+								width: 100%;
+								bottom: #{toRem(-12)};
+								left: 0;
+								border-radius: 999px;
+								background: linear-gradient(
+									90deg,
+									$primary 0%,
+									rgba($primary, 0) 100%
+								);
+							}
+						}
+						p {
+							@include font-size(21);
+							line-height: 150%;
+							color: $black-50;
+						}
 					}
-					p {
-						@include font-size(21);
-						line-height: 140;
+
+					&.about--section--img {
+						position: relative;
+
+						div {
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							position: absolute;
+
+							h1 {
+								@include font-size(71);
+								font-weight: 300;
+								color: $secondary;
+							}
+							h5 {
+								@include font-size(22);
+								font-weight: 400;
+								color: $primary;
+								@include margin(-10, 0, 0, 0);
+							}
+
+							&.interviews {
+								bottom: 3.5rem;
+								position: relative;
+
+								&::before {
+									content: "";
+									position: absolute;
+									height: #{toRem(10)};
+									width: 100%;
+									bottom: #{toRem(-12)};
+									left: 0;
+									border-radius: 999px;
+									background: linear-gradient(
+										90deg,
+										$primary 0%,
+										rgba($primary, 0) 100%
+									);
+								}
+							}
+							&.news {
+								bottom: 9.5rem;
+								right: 2rem;
+							}
+							&.media {
+								top: 5rem;
+								left: 3rem;
+							}
+						}
+
+						img {
+							@include height(730);
+							object-fit: contain;
+						}
 					}
 				}
 			}
