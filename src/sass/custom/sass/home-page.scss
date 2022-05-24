@@ -157,32 +157,18 @@ main#front-page {
 								@include font-size(71);
 								font-weight: 300;
 								color: $secondary;
+								z-index: 1;
 							}
 							h5 {
 								@include font-size(22);
 								font-weight: 400;
 								color: $primary;
 								@include margin(-10, 0, 0, 0);
+								z-index: 1;
 							}
 
 							&.interviews {
 								bottom: 3.5rem;
-								position: relative;
-
-								&::before {
-									content: "";
-									position: absolute;
-									height: #{toRem(10)};
-									width: 100%;
-									bottom: #{toRem(-12)};
-									left: 0;
-									border-radius: 999px;
-									background: linear-gradient(
-										90deg,
-										$primary 0%,
-										rgba($primary, 0) 100%
-									);
-								}
 							}
 							&.news {
 								bottom: 9.5rem;
@@ -191,6 +177,24 @@ main#front-page {
 							&.media {
 								top: 5rem;
 								left: 3rem;
+							}
+
+							&::before {
+								content: "";
+								position: absolute;
+								height: auto;
+								width: auto;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%) rotate(45deg);
+								border-radius: #{toRem(45)};
+								background: linear-gradient(
+									90deg,
+									rgba($primary, 0.05) 0%,
+									rgba($light, 0) 100%
+								);
+								padding: 6rem;
+								z-index: 0;
 							}
 						}
 

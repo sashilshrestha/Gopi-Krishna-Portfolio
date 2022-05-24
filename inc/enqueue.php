@@ -23,8 +23,8 @@ if (!function_exists('understrap_scripts')) {
 		// {$suffix}
 		// {$suffix}
 		// Grab asset urls.
-		$theme_styles  = "/css/theme.css";
-		$theme_scripts = "/js/theme.js";
+		$theme_styles  = "/css/theme{$suffix}.css";
+		$theme_scripts = "/js/theme{$suffix}.js";
 
 
 		$css_version = $theme_version . '.' . filemtime(get_template_directory() . $theme_styles);

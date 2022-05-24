@@ -9339,7 +9339,7 @@
 
 	let counterSection = document.querySelector(".about--section--img");
 	let options = {
-	  rootMargin: "0px 0px -780px 0px"
+	  rootMargin: "0px 0px -580px 0px"
 	};
 	let done = 0;
 	const sectionObeserver = new IntersectionObserver(function (entries) {

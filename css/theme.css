@@ -16657,12 +16657,14 @@ main#front-page .about--section .container .row .col-md-6.about--section--img di
   font-size: 4.4375rem;
   font-weight: 300;
   color: #ab397a;
+  z-index: 1;
 }
 main#front-page .about--section .container .row .col-md-6.about--section--img div h5, main#front-page .about--section .container .row .col-md-6.about--section--img div .h5 {
   font-size: 1.375rem;
   font-weight: 400;
   color: #642e7c;
   margin: -0.625rem 0rem 0rem 0rem;
+  z-index: 1;
 }
 main#front-page .about--section .container .row .col-md-6.about--section--img div.interviews {
   bottom: 3.5rem;
@@ -16674,6 +16676,20 @@ main#front-page .about--section .container .row .col-md-6.about--section--img di
 main#front-page .about--section .container .row .col-md-6.about--section--img div.media {
   top: 5rem;
   left: 3rem;
+}
+main#front-page .about--section .container .row .col-md-6.about--section--img div::before {
+  content: "";
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 2.8125rem;
+  background: linear-gradient(90deg, rgba(100, 46, 124, 0.05) 0%, rgba(255, 246, 255, 0) 100%);
+  padding: 6rem;
+  z-index: 0;
 }
 main#front-page .about--section .container .row .col-md-6.about--section--img img {
   height: 45.625rem;
