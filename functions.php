@@ -45,26 +45,6 @@ foreach ($understrap_includes as $file) {
 	require_once get_theme_file_path($understrap_inc_dir . $file);
 }
 
-// ----------------------------- Custom slider post type -----------------------------
-function gk_custom_slider()
-{
-	register_post_type('Slider', [
-		'rewrite' => ['slug' => 'Slider'],
-		'labels' => [
-			'name' => 'Slider',
-			'singular_name' => 'Slide',
-			'add_new_item' => 'Add New Slide',
-			'edit_item' => 'Edit Slide',
-		],
-		'menu_icon' => 'dashicons-media-archive',
-		'public' => true,
-		'has_archive' => true,
-		'show_in_rest' => true,
-		'menu_position' => 6,
-		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
-	]);
-}
-add_action('init', 'gk_custom_slider');
 
 // ----------------------------- Feature image in admin pannel -----------------------------
 // show featured images in dashboard
@@ -105,3 +85,45 @@ function trim_content($excerpt, $num_words, $more)
 	$excerpt = wp_trim_words($excerpt, $num_words, $more);
 	return $excerpt;
 }
+
+// ----------------------------- Custom slider post type -----------------------------
+function gk_custom_slider()
+{
+	register_post_type('Slider', [
+		'rewrite' => ['slug' => 'Slider'],
+		'labels' => [
+			'name' => 'Slider',
+			'singular_name' => 'Slide',
+			'add_new_item' => 'Add New Slide',
+			'edit_item' => 'Edit Slide',
+		],
+		'menu_icon' => 'dashicons-media-archive',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'menu_position' => 10,
+		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
+	]);
+}
+add_action('init', 'gk_custom_slider');
+
+// ----------------------------- Custom youtube videos post type -----------------------------
+function gk_custom_yt_videos()
+{
+	register_post_type('Youtube', [
+		'rewrite' => ['slug' => 'Youtube'],
+		'labels' => [
+			'name' => 'YT Videos',
+			'singular_name' => 'YT',
+			'add_new_item' => 'Add New YT Video',
+			'edit_item' => 'Edit YT Video',
+		],
+		'menu_icon' => 'dashicons-video-alt3',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'menu_position' => 10,
+		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
+	]);
+}
+add_action('init', 'gk_custom_yt_videos');

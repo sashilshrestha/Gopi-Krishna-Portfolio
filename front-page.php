@@ -81,12 +81,40 @@
         <div class="container">
             <h1 class="section--title">Checkout My Youtube Videos</h1>
             <div class="row section--content">
-                <div class="col-md-6">
-                    <div class="card--container">
-                        <img src="https://images.unsplash.com/photo-1652538893053-fe348c9a9440?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt="">
-                        <div class="bg--overlay"></div>
-                        <h4>कांग्रेसमा लागेपछि भूवन केसीको पहिलो बोली यस्तो, अरु त मान्छेनै होइनन् भने निर शाहले | Bhuwan Kc</h4>
+                <?php
+                $args = array(
+                    'post_type' => 'youtube',
+                    'posts_per_page' => 4,
+                    'order' => 'DESC',
+                    'orderby' => 'publish_date',
+
+                );
+                $youtube_posts = new WP_Query($args);
+
+                while ($youtube_posts->have_posts()) :
+                    $youtube_posts->the_post();
+                    // For Image Call
+                    $thumb_id = get_post_thumbnail_id();
+                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+                ?>
+                    <!-- Loop Started -->
+                    <div class="col-md-6">
+                        <div class="card--container">
+                            <img src="<?php echo $thumb_url[0] ?>" alt="">
+                            <div class="bg--overlay"></div>
+                            <a href="<?php the_permalink() ?>">
+                                <h4><?php the_title() ?></h4>
+                            </a>
+                        </div>
                     </div>
+                    <!-- Loop Started -->
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
+                <div class="col-md-6"></div>
+                <div class="col-md-6 explore--more">
+                    <h1>Explore More </h1>
                 </div>
             </div>
         </div>
