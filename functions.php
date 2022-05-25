@@ -45,7 +45,7 @@ foreach ($understrap_includes as $file) {
 	require_once get_theme_file_path($understrap_inc_dir . $file);
 }
 
-// ----------------------------- Custom Projects post type -----------------------------
+// ----------------------------- Custom slider post type -----------------------------
 function gk_custom_slider()
 {
 	register_post_type('Slider', [
@@ -96,4 +96,12 @@ function prithak_show_post_thumbnail_column($prithak_columns, $prithak_id)
 				echo 'hmm… your theme doesn\'t support featured image…';
 			break;
 	}
+}
+
+// ----------------------------- Custom Excerpt  -----------------------------
+function trim_content($excerpt, $num_words, $more)
+{
+
+	$excerpt = wp_trim_words($excerpt, $num_words, $more);
+	return $excerpt;
 }

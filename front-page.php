@@ -1,6 +1,7 @@
 <?php get_header() ?>
 <main id="front-page">
 
+    <!-- Hero Section -->
     <div class="hero--section">
         <div class="container">
             <div class="hero">
@@ -37,30 +38,54 @@
 
         </div>
     </div>
+
+    <!-- About Section -->
     <div class="about--section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 about--section--info">
-                    <h1>About Me</h1>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </p>
+                    <?php
+                    $page_slug = 'about-me';
+                    $page_data = get_page_by_path($page_slug);
+                    $page_id = $page_data->ID;
+                    echo '<h1>' . $page_data->post_title . '</h1>';
+                    $paragraph =  $page_data->post_content;
+                    ?>
+                    <p><?php echo trim_content($paragraph, 85, ' [...]') ?></p>
                     <div>
-                        <a href="" class="btn btn-primary">Read More</a>
+                        <a href="<?php echo get_permalink($page_id) ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 about--section--img">
-                    <?php $themefile = get_template_directory_uri(); ?>
-                    <img src="<?php echo $themefile; ?>/assets/images/about-section-profile.png" alt="">
+                    <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($page_id), 'single-post-thumbnail'); ?>
+                    <img src="<?php echo $image[0]; ?>" alt="">
                     <div class="interviews">
-                        <h1 class="counter" data-count="1000">1000+</h1>
+                        <h1 class="counter" data-count="<?php echo get_field('video_interviews', $page_id); ?>"></h1>
                         <h5>Video Interviews</h5>
                     </div>
                     <div class="news">
-                        <h1 class="counter" data-count="1000">1000+</h1>
+                        <h1 class="counter" data-count="<?php echo get_field('news', $page_id); ?>"></h1>
                         <h5>News</h5>
                     </div>
                     <div class="media">
-                        <h1 class="counter" data-count="300">300+</h1>
-                        <h5>Media</h5>
+                        <h1 class="counter" data-count="<?php echo get_field('media_coverage', $page_id); ?>"></h1>
+                        <h5>Media Coverage</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="youtube--section">
+        <div class="container">
+            <h1 class="section--title">Checkout My Youtube Videos</h1>
+            <div class="row section--content">
+                <div class="col-md-6">
+                    <div class="card--container">
+                        <img src="https://images.unsplash.com/photo-1652538893053-fe348c9a9440?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt="">
+                        <div class="bg--overlay"></div>
+                        <h4>कांग्रेसमा लागेपछि भूवन केसीको पहिलो बोली यस्तो, अरु त मान्छेनै होइनन् भने निर शाहले | Bhuwan Kc</h4>
                     </div>
                 </div>
             </div>

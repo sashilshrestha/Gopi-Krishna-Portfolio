@@ -9344,7 +9344,6 @@
 	let done = 0;
 	const sectionObeserver = new IntersectionObserver(function (entries) {
 	  if (entries[0].isIntersecting && done !== 1) {
-	    console.log("Demo");
 	    done = 1;
 	    runCounter();
 	  }
