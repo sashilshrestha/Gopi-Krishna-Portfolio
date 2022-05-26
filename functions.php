@@ -110,7 +110,7 @@ add_action('init', 'gk_custom_slider');
 // ----------------------------- Custom youtube videos post type -----------------------------
 function gk_custom_yt_videos()
 {
-	register_post_type('Youtube', [
+	register_post_type('youtube', [
 		'rewrite' => ['slug' => 'Youtube'],
 		'labels' => [
 			'name' => 'YT Videos',
@@ -122,8 +122,54 @@ function gk_custom_yt_videos()
 		'public' => true,
 		'has_archive' => true,
 		'show_in_rest' => true,
-		'menu_position' => 10,
+		'menu_position' => 11,
 		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
 	]);
 }
 add_action('init', 'gk_custom_yt_videos');
+
+// ----------------------------- Custom photo gallery post type -----------------------------
+function gk_custom_photo_gallery()
+{
+	register_post_type('photos', [
+		'rewrite' => ['slug' => 'Photos'],
+		'labels' => [
+			'name' => 'Photos',
+			'singular_name' => 'Photo',
+			'add_new_item' => 'Add New Photo',
+			'edit_item' => 'Edit Photo',
+		],
+		'menu_icon' => 'dashicons-embed-photo',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'menu_position' => 12,
+		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes', 'taxonomy'],
+	]);
+}
+add_action('init', 'gk_custom_photo_gallery');
+
+/* Custom Taxonomy for Custom Post */
+function taxonomies_photos()
+{
+	$labels = array(
+		'name'              => _x('Photos Categories', 'taxonomy general name'),
+		'singular_name'     => _x('Photos Category', 'taxonomy singular name'),
+		'search_items'      => __('Search Photos Categories'),
+		'all_items'         => __('All Photos Categories'),
+		'parent_item'       => __('Parent Photos Category'),
+		'parent_item_colon' => __('Parent Photos Category:'),
+		'edit_item'         => __('Edit Photos Category'),
+		'update_item'       => __('Update Photos Category'),
+		'add_new_item'      => __('Add New Photos Category'),
+		'new_item_name'     => __('New Photos Category'),
+		'menu_name'         => __('Photos Categories'),
+	);
+	$args = array(
+		'labels' => $labels,
+		'hierarchical' => true,
+		'show_in_rest' => true,
+	);
+	register_taxonomy('photos_category', 'photos', $args);
+}
+add_action('init', 'taxonomies_photos', 0);

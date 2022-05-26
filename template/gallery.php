@@ -16,16 +16,46 @@ get_header();
     <div class="gallery--content">
         <ul class="links">
             <li><a data-filter="*" class="active">All</a></li>
-            <li><a data-filter=".a" class="">Photos</a></li>
-            <li><a data-filter=".b " class="">Videos</a></li>
+            <?php
+            $taxonomy = get_terms('photos_category', array('hide_empty' => 0));
+            foreach ($taxonomy as $taxo) {
+
+            ?>
+                <li><a data-filter=".<?php echo $taxo->name ?>"><?php echo $taxo->name ?></a></li>
+            <?php
+            }
+            ?>
+
+
+
         </ul>
         <div class="gallery--container">
             <div class="container wrapper">
-                <div class="a item"><a href="https://picsum.photos/200/300" class="magnify"><img src="https://picsum.photos/200/300" alt=""></a></div>
-                <div class="b item"><a href="https://picsum.photos/200/370" class="magnify"><img src="https://picsum.photos/200/370" alt=""></a></div>
-                <div class="a item"><a href="https://picsum.photos/200/350" class="magnify"><img src="https://picsum.photos/200/350" alt=""></a></div>
-                <div class="a item"><a href="https://picsum.photos/200/320" class="magnify"><img src="https://picsum.photos/200/320" alt=""></a></div>
-                <div class="b item"><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><img src="https://picsum.photos/200/330" alt=""></a></div>
+                <!-- Post Calling Loop Started -->
+                <?php
+                $args = array(
+                    'post_type' => 'photos',
+                    'posts_per_page' => -1,
+                    'order' => 'ASC',
+                    'orderby' => 'menu_order',
+                );
+                $allposts = new WP_Query($args);
+
+                while ($allposts->have_posts()) :
+                    $allposts->the_post();
+                    // For Image Call
+                    $thumb_id = get_post_thumbnail_id();
+                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+                    $categories = get_the_terms($post->ID, 'photos_category');
+
+                ?>
+                    <!-- Loop Started -->
+                    <div class="<?php print_r($categories[0]->name); ?> item"><a href="<?php echo $thumb_url[0]; ?>" class="magnify"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
+                    <!-- Loop Ended -->
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
 
