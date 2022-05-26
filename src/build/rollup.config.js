@@ -35,6 +35,7 @@ module.exports = {
 		path.resolve(__dirname, "../js/skip-link-focus-fix.js"),
 		path.resolve(__dirname, "../js/custom-javascript.js"),
 		path.resolve(__dirname, "../js/custom-slick.js"),
+		path.resolve(__dirname, "../js/magnify.js"),
 	],
 	output: {
 		banner,

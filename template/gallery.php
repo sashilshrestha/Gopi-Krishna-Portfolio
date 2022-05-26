@@ -14,17 +14,19 @@ get_header();
         <h1><?php the_title() ?></h1>
     </div>
     <div class="gallery--content">
-        <ul>
-            <li><a href="" data-filter="*">All</a></li>
-            <li><a href="" data-filter=".a">A</a></li>
-            <li><a href="" data-filter=".b">B</a></li>
+        <ul class="links">
+            <li><a data-filter="*" class="active">All</a></li>
+            <li><a data-filter=".a" class="">Photos</a></li>
+            <li><a data-filter=".b " class="">Videos</a></li>
         </ul>
-        <div class="d-flex">
-            <div class="a"><img src="https://picsum.photos/200/300" alt=""></div>
-            <div class="b"><img src="https://picsum.photos/200/370" alt=""></div>
-            <div class="a"><img src="https://picsum.photos/200/350" alt=""></div>
-            <div class="a"><img src="https://picsum.photos/200/320" alt=""></div>
-            <div class="b"><img src="https://picsum.photos/200/330" alt=""></div>
+        <div class="gallery--container">
+            <div class="container wrapper">
+                <div class="a item"><a href="https://picsum.photos/200/300" class="magnify"><img src="https://picsum.photos/200/300" alt=""></a></div>
+                <div class="b item"><a href="https://picsum.photos/200/370" class="magnify"><img src="https://picsum.photos/200/370" alt=""></a></div>
+                <div class="a item"><a href="https://picsum.photos/200/350" class="magnify"><img src="https://picsum.photos/200/350" alt=""></a></div>
+                <div class="a item"><a href="https://picsum.photos/200/320" class="magnify"><img src="https://picsum.photos/200/320" alt=""></a></div>
+                <div class="b item"><a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><img src="https://picsum.photos/200/330" alt=""></a></div>
+            </div>
         </div>
 
     </div>

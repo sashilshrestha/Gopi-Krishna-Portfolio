@@ -1,0 +1,42 @@
+main#gallery-page {
+	.gallery--content {
+		@include padding(60, 0, 60, 0);
+		ul.links {
+			display: flex;
+			list-style: none;
+			padding: 0;
+			justify-content: center;
+
+			li {
+				@include margin(0, 2, 0, 2);
+				a {
+					cursor: pointer;
+					@include padding(5, 15, 5, 15);
+					border-radius: #{toRem(4)};
+					color: $black;
+
+					&.active {
+						background-color: $primary;
+						color: $white;
+					}
+				}
+			}
+		}
+		.gallery--container {
+			.wrapper {
+				display: flex;
+				.item {
+					flex: 0 0 33.333333%;
+					width: 33.333333%;
+					@include margin(0, 0, 40, 0);
+
+					img {
+						width: 92%;
+						height: 30rem;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+	}
+}

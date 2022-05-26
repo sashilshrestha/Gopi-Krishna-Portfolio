@@ -20,7 +20,6 @@ function runCounter() {
 		counter.innerText = 0;
 		let target = +counter.dataset.count;
 		let step = target / 100;
-
 		let countIt = function () {
 			let displayedCount = +counter.innerText;
 			if (displayedCount < target) {
@@ -35,6 +34,7 @@ function runCounter() {
 }
 
 let counterSection = document.querySelector(".about--section--img");
+
 let options = {
 	rootMargin: "0px 0px -580px 0px",
 };
@@ -45,4 +45,7 @@ const sectionObeserver = new IntersectionObserver(function (entries) {
 		runCounter();
 	}
 }, options);
-sectionObeserver.observe(counterSection);
+
+if (counterSection !== null) {
+	sectionObeserver.observe(counterSection);
+}
