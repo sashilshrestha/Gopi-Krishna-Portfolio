@@ -1,0 +1,72 @@
+main#about-page {
+	.page--hero {
+		// background-color: $light;
+		position: relative;
+		@include padding(80, 0, 120, 0);
+		.abstract--background {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			z-index: 0;
+		}
+		.hero--img {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			z-index: 1;
+			.img--container {
+				position: relative;
+				img {
+					@include height(565);
+					object-fit: cover;
+				}
+				&::before {
+					content: "";
+					position: absolute;
+					height: #{toRem(168)};
+					width: #{toRem(168)};
+					top: #{toRem(-50)};
+					left: #{toRem(-50)};
+					border-radius: 999px;
+					background: $primary;
+					z-index: -1;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					height: #{toRem(168)};
+					width: #{toRem(168)};
+					bottom: #{toRem(-50)};
+					right: #{toRem(-50)};
+					border-radius: 999px;
+					background: $secondary;
+					z-index: -1;
+				}
+			}
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 50%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background: $light;
+			z-index: -1;
+		}
+	}
+	.hero--content {
+		@include padding(80, 0, 80, 0);
+		.container {
+			p {
+				@include font-size(37.31);
+				line-height: 120%;
+				color: $black-50;
+			}
+		}
+	}
+}

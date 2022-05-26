@@ -1,0 +1,76 @@
+main#news-page {
+	.news--content {
+		@include padding(80, 0, 80, 0);
+		.container {
+			.col-md-4 {
+				.card--container {
+					border-radius: #{toRem(10)};
+					box-shadow: 0px 4px 30px rgba($color: #000000, $alpha: 0.05);
+					transition: all 0.3s ease-in-out;
+
+					.card--img {
+						border-radius: #{toRem(10)};
+						overflow: hidden;
+						img {
+							width: 100%;
+							@include height(282);
+							object-fit: cover;
+						}
+					}
+					.card--info {
+						@include padding(20, 20, 20, 20);
+
+						h1 {
+							@include font-size(24);
+							color: $black;
+							@include margin(0, 0, 12, 0);
+							line-height: 120%;
+							cursor: pointer;
+						}
+						p {
+							@include font-size(18);
+							color: $black-50;
+							@include margin(0, 0, 20, 0);
+							line-height: 130%;
+						}
+						footer {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+
+							p {
+								@include font-size(16);
+								color: $secondary;
+								font-weight: 700;
+								margin: 0;
+							}
+
+							a {
+								@include font-size(14);
+								@include padding(0, 20, 0, 0);
+								img {
+									height: 2rem;
+								}
+							}
+						}
+					}
+
+					&:hover {
+						.card--img {
+							img {
+								transform: scale(1.1);
+							}
+						}
+						.card--info {
+							footer {
+								a {
+									@include padding(0, 10, 0, 0);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

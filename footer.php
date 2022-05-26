@@ -16,7 +16,7 @@ defined('ABSPATH') || exit;
 
 <div class="wrapper" id="wrapper-footer">
 	<footer>
-		<h1 class="container">This is footer</h1>
+
 	</footer>
 </div><!-- wrapper end -->
 

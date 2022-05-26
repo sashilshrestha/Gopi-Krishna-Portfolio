@@ -5,12 +5,17 @@
 body {
 	overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5 {
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
 }
 
 .btn {
@@ -23,5 +28,21 @@ h5 {
 	&.btn-primary {
 		background-color: $primary;
 		color: $white;
+	}
+}
+
+.page--header {
+	@include padding(60, 0, 100, 0);
+	background-color: $light;
+	display: flex;
+	justify-content: center;
+	h1 {
+		background: linear-gradient(90deg, $primary, $secondary);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-weight: 900;
+		letter-spacing: #{toRem(-3)};
+		@include font-size(66.3);
+		text-transform: capitalize;
 	}
 }

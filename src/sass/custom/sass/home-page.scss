@@ -9,7 +9,7 @@ main#front-page {
 				@include padding(80, 0, 64, 0);
 				h5 {
 					@include font-size(49.7);
-					background: linear-gradient(90deg, #362057, $secondary);
+					background: linear-gradient(90deg, $primary, $secondary);
 					background-clip: text;
 					-webkit-text-fill-color: transparent;
 					font-weight: 900;
@@ -17,7 +17,7 @@ main#front-page {
 				}
 				h1 {
 					@include font-size(88.4);
-					background: linear-gradient(90deg, #362057, $secondary);
+					background: linear-gradient(90deg, $primary, $secondary);
 					background-clip: text;
 					-webkit-text-fill-color: transparent;
 					font-weight: 900;
@@ -115,7 +115,7 @@ main#front-page {
 						h1 {
 							position: relative;
 							@include font-size(49.7);
-							background: linear-gradient(90deg, #362057, $secondary);
+							background: linear-gradient(90deg, $primary, $secondary);
 							background-clip: text;
 							-webkit-text-fill-color: transparent;
 							font-weight: 900;
@@ -213,7 +213,7 @@ main#front-page {
 		h1.section--title {
 			position: relative;
 			@include font-size(49.7);
-			background: linear-gradient(90deg, #362057, $secondary);
+			background: linear-gradient(90deg, $primary, $secondary);
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
 			font-weight: 900;
@@ -285,7 +285,7 @@ main#front-page {
 				h1 {
 					position: relative;
 					@include font-size(49.7);
-					background: linear-gradient(90deg, #362057, $secondary);
+					background: linear-gradient(90deg, $primary, $secondary);
 					background-clip: text;
 					-webkit-text-fill-color: transparent;
 					font-weight: 900;
