@@ -17,15 +17,31 @@ get_header();
         <div class="container">
             <div class="row">
                 <?php
-                for ($x = 0; $x <= 10; $x++) {
+                $args = array(
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'order' => 'DESC',
+                    'orderby' => 'publish_date',
+                );
+                $newsposts = new WP_Query($args);
+
+                while ($newsposts->have_posts()) :
+                    $newsposts->the_post();
+
+                    $thumb_id = get_post_thumbnail_id();
+                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+
                 ?>
                     <div class="col-md-4">
                         <div class="card--container">
                             <div class="card--img">
-                                <img src="https://picsum.photos/200/30<?php echo $x ?>" alt="">
+                                <img src="<?php echo $thumb_url[0] ?>" alt="">
                             </div>
                             <div class="card--info">
-                                <h1>Sirjana-2020: Kathmandu hosts a collective art show featuring paintings and more</h1>
+                                <a href="<?php the_permalink() ?>">
+                                    <h1><?php the_title() ?></h1>
+                                </a>
                                 <p>In the exhibition, most of the rhythmic paintings are created in the abstract form where their composition an</p>
                                 <footer>
                                     <p>10 December 2022</p>
@@ -38,7 +54,9 @@ get_header();
                         </div>
                     </div>
                 <?php
-                }
+
+                endwhile;
+                wp_reset_postdata();
                 ?>
             </div>
         </div>
