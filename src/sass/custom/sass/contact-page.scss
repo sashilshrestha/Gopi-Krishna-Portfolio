@@ -1,0 +1,93 @@
+main#contact-page {
+	.contact--container {
+		@include padding(100, 0, 100, 0);
+		.contact--details {
+			display: flex;
+			justify-content: center;
+			@include margin(0, 0, 50, 0);
+
+			.contact--item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				// border: #{toRem(8)} solid $primary;
+				// border-radius: 999px;
+				padding: 1.5rem;
+				@include margin(0, 60, 0, 60);
+
+				.icons {
+					svg {
+						height: 5rem;
+					}
+				}
+				h1 {
+					@include font-size(26);
+					@include margin(20, 0, 0, 0);
+					text-align: center;
+					color: $primary;
+					font-weight: 500;
+				}
+			}
+		}
+
+		.wpforms-container {
+			@include width(950);
+			max-width: 100%;
+
+			form {
+				.wpforms-field-container {
+					.wpforms-field {
+						.wpforms-field-row {
+							max-width: 100%;
+							width: 100%;
+							input {
+								max-width: 100%;
+								width: 100%;
+								@include font-size(26);
+								padding: 1rem;
+								border-radius: #{toRem(4)};
+
+								&:focus {
+									box-shadow: 0 0 0 0.25rem rgba($secondary, 0.25);
+									border-color: transparent;
+								}
+							}
+						}
+						.wpforms-field-medium {
+							max-width: 100%;
+							width: 100%;
+							@include font-size(26);
+							border-radius: #{toRem(4)};
+							padding: 2rem;
+
+							&:focus {
+								box-shadow: 0 0 0 0.25rem rgba($secondary, 0.25);
+								border-color: transparent;
+							}
+						}
+					}
+				}
+			}
+			label {
+				@include margin(0, 0, 20, 0);
+				@include font-size(26);
+				color: $black;
+			}
+		}
+		div.wpforms-container-full .wpforms-form button[type="submit"] {
+			width: 100%;
+			padding: 1rem;
+			background-color: $primary;
+			color: $white;
+			font-weight: 900;
+			@include font-size(26);
+			border-radius: 0.5rem;
+		}
+		label.wpforms-error {
+			@include font-size(16);
+			color: red;
+			@include margin(5, 0, 0, 0);
+		}
+	}
+}

@@ -17392,7 +17392,7 @@ main#news-page .news--content .container .col-md-4 .card--container:hover .card-
 }
 
 main#gallery-page .gallery--content {
-  padding: 3.75rem 0rem 3.75rem 0rem;
+  padding: 6.875rem 0rem 3.75rem 0rem;
 }
 main#gallery-page .gallery--content ul.links {
   display: -ms-flexbox;
@@ -17401,15 +17401,17 @@ main#gallery-page .gallery--content ul.links {
   padding: 0;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0rem 0rem 5rem 0rem;
 }
 main#gallery-page .gallery--content ul.links li {
-  margin: 0rem 0.125rem 0rem 0.125rem;
+  margin: 0rem 0.3125rem 0rem 0.3125rem;
 }
 main#gallery-page .gallery--content ul.links li a {
   cursor: pointer;
   padding: 0.3125rem 0.9375rem 0.3125rem 0.9375rem;
   border-radius: 0.25rem;
   color: #281232;
+  font-size: 1.625rem;
 }
 main#gallery-page .gallery--content ul.links li a.active {
   background-color: #642e7c;
@@ -17427,7 +17429,6 @@ main#gallery-page .gallery--content .gallery--container .wrapper .item {
 }
 main#gallery-page .gallery--content .gallery--container .wrapper .item img {
   width: 92%;
-  height: 30rem;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -17552,6 +17553,88 @@ header.single-header .container .row .single-meta {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
   }
+}
+
+main#contact-page .contact--container {
+  padding: 6.25rem 0rem 6.25rem 0rem;
+}
+main#contact-page .contact--container .contact--details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0rem 0rem 3.125rem 0rem;
+}
+main#contact-page .contact--container .contact--details .contact--item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1.5rem;
+  margin: 0rem 3.75rem 0rem 3.75rem;
+}
+main#contact-page .contact--container .contact--details .contact--item .icons svg {
+  height: 5rem;
+}
+main#contact-page .contact--container .contact--details .contact--item h1, main#contact-page .contact--container .contact--details .contact--item .h1 {
+  font-size: 1.625rem;
+  margin: 1.25rem 0rem 0rem 0rem;
+  text-align: center;
+  color: #642e7c;
+  font-weight: 500;
+}
+main#contact-page .contact--container .wpforms-container {
+  width: 59.375rem;
+  max-width: 100%;
+}
+main#contact-page .contact--container .wpforms-container form .wpforms-field-container .wpforms-field .wpforms-field-row {
+  max-width: 100%;
+  width: 100%;
+}
+main#contact-page .contact--container .wpforms-container form .wpforms-field-container .wpforms-field .wpforms-field-row input {
+  max-width: 100%;
+  width: 100%;
+  font-size: 1.625rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+main#contact-page .contact--container .wpforms-container form .wpforms-field-container .wpforms-field .wpforms-field-row input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(171, 57, 122, 0.25);
+  border-color: transparent;
+}
+main#contact-page .contact--container .wpforms-container form .wpforms-field-container .wpforms-field .wpforms-field-medium {
+  max-width: 100%;
+  width: 100%;
+  font-size: 1.625rem;
+  border-radius: 0.25rem;
+  padding: 2rem;
+}
+main#contact-page .contact--container .wpforms-container form .wpforms-field-container .wpforms-field .wpforms-field-medium:focus {
+  box-shadow: 0 0 0 0.25rem rgba(171, 57, 122, 0.25);
+  border-color: transparent;
+}
+main#contact-page .contact--container .wpforms-container label {
+  margin: 0rem 0rem 1.25rem 0rem;
+  font-size: 1.625rem;
+  color: #281232;
+}
+main#contact-page .contact--container div.wpforms-container-full .wpforms-form button[type=submit] {
+  width: 100%;
+  padding: 1rem;
+  background-color: #642e7c;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.625rem;
+  border-radius: 0.5rem;
+}
+main#contact-page .contact--container label.wpforms-error {
+  font-size: 1rem;
+  color: red;
+  margin: 0.3125rem 0rem 0rem 0rem;
 }
 
 /* Slider */

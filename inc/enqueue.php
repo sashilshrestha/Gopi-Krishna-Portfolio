@@ -21,7 +21,8 @@ if (!function_exists('understrap_scripts')) {
 		$suffix            = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 
 		// Grab asset urls.
-		$theme_styles  = "/css/theme{$suffix}.css";
+		// {$suffix}
+		$theme_styles  = "/css/theme.css";
 		$theme_scripts = "/js/theme.js";
 		$isotope_scripts = "/js/isotope.js";
 
