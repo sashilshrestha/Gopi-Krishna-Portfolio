@@ -79,9 +79,8 @@ function prithak_show_post_thumbnail_column($prithak_columns, $prithak_id)
 }
 
 // ----------------------------- Custom Excerpt  -----------------------------
-function trim_content($excerpt, $num_words, $more)
+function trim_data($excerpt, $num_words, $more)
 {
-
 	$excerpt = wp_trim_words($excerpt, $num_words, $more);
 	return $excerpt;
 }
@@ -149,7 +148,28 @@ function gk_custom_photo_gallery()
 }
 add_action('init', 'gk_custom_photo_gallery');
 
-/* Custom Taxonomy for Custom Post */
+// ----------------------------- Custom media coverage post type -----------------------------
+function gk_custom_media_coverage()
+{
+	register_post_type('media_coverage', [
+		'rewrite' => ['slug' => 'Media Coverage'],
+		'labels' => [
+			'name' => 'Media Coverage',
+			'singular_name' => 'Coverage',
+			'add_new_item' => 'Add New Coverage',
+			'edit_item' => 'Edit Coverage',
+		],
+		'menu_icon' => 'dashicons-welcome-widgets-menus',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'menu_position' => 13,
+		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes', 'taxonomy'],
+	]);
+}
+add_action('init', 'gk_custom_media_coverage');
+
+// ----------------------------- Custom Taxonomy for Custom Post -----------------------------
 function taxonomies_photos()
 {
 	$labels = array(

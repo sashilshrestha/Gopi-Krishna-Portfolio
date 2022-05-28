@@ -17167,10 +17167,10 @@ main#front-page .about--section .container .row .col-md-6.about--section--img im
   -o-object-fit: contain;
   object-fit: contain;
 }
-main#front-page .youtube--section {
+main#front-page .news--section {
   padding: 6.25rem 0rem 6.25rem 0rem;
 }
-main#front-page .youtube--section h1.section--title, main#front-page .youtube--section .section--title.h1 {
+main#front-page .news--section h1.section--title, main#front-page .news--section .section--title.h1 {
   position: relative;
   font-size: 3.10625rem;
   background: linear-gradient(90deg, #642e7c, #ab397a);
@@ -17182,7 +17182,7 @@ main#front-page .youtube--section h1.section--title, main#front-page .youtube--s
   width: 24rem;
   margin: 0rem 0rem 3.125rem 0rem;
 }
-main#front-page .youtube--section h1.section--title::after, main#front-page .youtube--section .section--title.h1::after {
+main#front-page .news--section h1.section--title::after, main#front-page .news--section .section--title.h1::after {
   content: "";
   position: absolute;
   height: 0.625rem;
@@ -17192,20 +17192,28 @@ main#front-page .youtube--section h1.section--title::after, main#front-page .you
   border-radius: 999px;
   background: linear-gradient(90deg, #642e7c 0%, rgba(100, 46, 124, 0) 100%);
 }
-main#front-page .youtube--section .section--content .col-md-6 {
+main#front-page .news--section .section--content .col-md-6 {
   padding: 0rem 1.5rem 0rem 0rem;
 }
-main#front-page .youtube--section .section--content .col-md-6 .card--container {
+main#front-page .news--section .section--content .col-md-6 .card--container {
   position: relative;
   border-radius: 0.625rem;
   box-shadow: 0px 10px 30px rgba(100, 46, 124, 0.2);
   margin: 0rem 0rem 3.125rem 0rem;
   transition: all 0.3s ease-in-out;
+  height: 25rem;
 }
-main#front-page .youtube--section .section--content .col-md-6 .card--container img {
+main#front-page .news--section .section--content .col-md-6 .card--container img {
   border-radius: inherit;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-main#front-page .youtube--section .section--content .col-md-6 .card--container .bg--overlay {
+main#front-page .news--section .section--content .col-md-6 .card--container .bg--overlay {
   background: linear-gradient(0deg, #642e7c 0%, rgba(100, 46, 124, 0) 100%);
   border-radius: inherit;
   position: absolute;
@@ -17214,26 +17222,37 @@ main#front-page .youtube--section .section--content .col-md-6 .card--container .
   top: 0;
   left: 0;
 }
-main#front-page .youtube--section .section--content .col-md-6 .card--container h4, main#front-page .youtube--section .section--content .col-md-6 .card--container .h4 {
+main#front-page .news--section .section--content .col-md-6 .card--container .card--info {
   position: absolute;
+  z-index: 1;
   bottom: 0;
   left: 0;
-  color: #ffffff;
   padding: 0 2rem 1.5rem 2rem;
-  line-height: 160%;
+}
+main#front-page .news--section .section--content .col-md-6 .card--container .card--info a h4, main#front-page .news--section .section--content .col-md-6 .card--container .card--info a .h4 {
+  color: #ffffff;
+  line-height: 110%;
   font-weight: 700;
   cursor: pointer;
+  font-size: 2rem;
+  margin: 0rem 0rem 0.625rem 0rem;
 }
-main#front-page .youtube--section .section--content .col-md-6 .card--container:hover h4, main#front-page .youtube--section .section--content .col-md-6 .card--container:hover .h4 {
-  -webkit-transform: translateY(-1rem);
-  transform: translateY(-1rem);
+main#front-page .news--section .section--content .col-md-6 .card--container .card--info h5, main#front-page .news--section .section--content .col-md-6 .card--container .card--info .h5 {
+  color: #cfcfcf;
+  font-weight: 300;
+  line-height: 140%;
+  font-size: 1.125rem;
+}
+main#front-page .news--section .section--content .col-md-6 .card--container:hover .card--info a h4, main#front-page .news--section .section--content .col-md-6 .card--container:hover .card--info a .h4 {
+  -webkit-transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
   text-decoration: underline;
 }
-main#front-page .youtube--section .section--content .col-md-6:nth-child(even) {
+main#front-page .news--section .section--content .col-md-6:nth-child(even) {
   margin: -10rem 0rem 0rem 0rem;
   padding: 0rem 0rem 0rem 1.5rem;
 }
-main#front-page .youtube--section .section--content .explore--more h1, main#front-page .youtube--section .section--content .explore--more .h1 {
+main#front-page .news--section .section--content .explore--more h1, main#front-page .news--section .section--content .explore--more .h1 {
   position: relative;
   font-size: 3.10625rem;
   background: linear-gradient(90deg, #642e7c, #ab397a);

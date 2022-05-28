@@ -56,6 +56,7 @@ get_header();
                 endwhile;
                 wp_reset_postdata();
                 ?>
+                <div class="item"><a href="https://www.youtube.com/watch?v=06hKnu9RUKk" class="videos-frame"><img src="https://i.ytimg.com/vi/06hKnu9RUKk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCKcuasF0VSv4Z1uZJodGtv5SyJzA" alt=""></a></div>
             </div>
         </div>
 

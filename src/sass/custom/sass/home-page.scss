@@ -208,7 +208,7 @@ main#front-page {
 			}
 		}
 	}
-	.youtube--section {
+	.news--section {
 		@include padding(100, 0, 100, 0);
 		h1.section--title {
 			position: relative;
@@ -241,8 +241,15 @@ main#front-page {
 					box-shadow: 0px 10px 30px rgba($primary, 0.2);
 					@include margin(0, 0, 50, 0);
 					transition: all 0.3s ease-in-out;
+					height: 25rem;
 					img {
 						border-radius: inherit;
+						width: 100%;
+						object-fit: cover;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
 					}
 					.bg--overlay {
 						background: linear-gradient(
@@ -257,20 +264,37 @@ main#front-page {
 						top: 0;
 						left: 0;
 					}
-					h4 {
+					.card--info {
 						position: absolute;
+						z-index: 1;
 						bottom: 0;
 						left: 0;
-						color: $white;
 						padding: 0 2rem 1.5rem 2rem;
-						line-height: 160%;
-						font-weight: 700;
-						cursor: pointer;
+						a {
+							h4 {
+								color: $white;
+								line-height: 110%;
+								font-weight: 700;
+								cursor: pointer;
+								@include font-size(32);
+								@include margin(0, 0, 10, 0);
+							}
+						}
+						h5 {
+							color: #cfcfcf;
+							font-weight: 300;
+							line-height: 140%;
+							@include font-size(18);
+						}
 					}
 					&:hover {
-						h4 {
-							transform: translateY(#{toRem(-16)});
-							text-decoration: underline;
+						.card--info {
+							a {
+								h4 {
+									transform: translateY(#{toRem(-8)});
+									text-decoration: underline;
+								}
+							}
 						}
 					}
 				}
