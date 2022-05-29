@@ -16481,6 +16481,41 @@ a {
   padding: 0 1rem;
 }
 
+.pagination--container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #642e7c;
+  margin: 2.5rem 0rem 1.25rem 0rem;
+}
+.pagination--container span {
+  width: 2rem;
+  height: 2rem;
+  background: #642e7c;
+  color: #ffffff;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 999px;
+  margin: 0 0.5rem;
+}
+
+.pagination--container > * {
+  margin: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #642e7c;
+}
+.pagination--container > *:hover {
+  color: #ab397a;
+}
+
 /* 7. Footer */
 /* 8. Mediaquery */
 @media screen and (min-width: 1200px) {

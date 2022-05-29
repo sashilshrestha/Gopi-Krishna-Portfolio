@@ -20,9 +20,10 @@ get_header();
                 $args = array(
                     'post_type' => 'post',
                     'post_status' => 'publish',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 4,
                     'order' => 'DESC',
                     'orderby' => 'publish_date',
+                    'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
                 );
                 $newsposts = new WP_Query($args);
 
@@ -31,7 +32,6 @@ get_header();
 
                     $thumb_id = get_post_thumbnail_id();
                     $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-
                 ?>
                     <div class="col-md-4">
                         <div class="card--container">
@@ -54,8 +54,15 @@ get_header();
                         </div>
                     </div>
                 <?php
-
                 endwhile;
+                ?>
+                <div class="pagination--container">
+                    <?php echo paginate_links(array(
+                        'total' => $newsposts->max_num_pages,
+                        'mid_size' => 2
+                    )); ?>
+                </div>
+                <?php
                 wp_reset_postdata();
                 ?>
             </div>

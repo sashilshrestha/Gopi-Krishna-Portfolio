@@ -47,3 +47,34 @@ a {
 		padding: 0 1rem;
 	}
 }
+
+.pagination--container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $primary;
+	@include margin(40, 0, 20, 0);
+
+	span {
+		width: 2rem;
+		height: 2rem;
+		background: $primary;
+		color: $white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		margin: 0 0.5rem;
+	}
+}
+
+.pagination--container > * {
+	margin: 0 1rem;
+	@include font-size(18);
+	font-weight: 500;
+	color: $primary;
+
+	&:hover {
+		color: $secondary;
+	}
+}
