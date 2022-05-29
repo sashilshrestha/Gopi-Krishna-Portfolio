@@ -63,9 +63,14 @@ main#about-page {
 		@include padding(80, 0, 80, 0);
 		.container {
 			p {
-				@include font-size(37.31);
-				line-height: 120%;
+				@include font-size(24);
+				line-height: 145%;
 				color: $black-50;
+
+				@include set(425) {
+					font-size: 1.8rem;
+					line-height: 135%;
+				}
 			}
 		}
 	}

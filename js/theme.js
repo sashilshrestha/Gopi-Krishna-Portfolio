@@ -9351,7 +9351,30 @@
 
 	if (counterSection !== null) {
 	  sectionObeserver.observe(counterSection);
+	} //use window.scrollY
+
+
+	var scrollpos = window.scrollY;
+	var header = document.getElementById("main-nav");
+
+	function add_class_on_scroll() {
+	  header.classList.add("header-sticky");
 	}
+
+	function remove_class_on_scroll() {
+	  header.classList.remove("header-sticky");
+	}
+
+	window.addEventListener("scroll", function () {
+	  //Here you forgot to update the value
+	  scrollpos = window.scrollY;
+
+	  if (scrollpos > 20) {
+	    add_class_on_scroll();
+	  } else {
+	    remove_class_on_scroll();
+	  }
+	});
 
 	var slick = {exports: {}};
 
@@ -12361,12 +12384,15 @@
 
 	jQuery(document).ready(function ($) {
 	  $(".img--slider").slick({
+	    infinite: false,
 	    centerMode: true,
+	    initialSlide: 2,
 	    centerPadding: "60px",
 	    slidesToShow: 3,
 	    arrows: true,
+	    variableWidth: true,
 	    responsive: [{
-	      breakpoint: 550,
+	      breakpoint: 995,
 	      settings: {
 	        centerPadding: "0px",
 	        arrows: false,

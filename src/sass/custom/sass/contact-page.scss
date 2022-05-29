@@ -29,6 +29,13 @@ main#contact-page {
 					font-weight: 500;
 				}
 			}
+
+			@include set(540) {
+				flex-direction: column;
+				.contact--item {
+					margin-bottom: 2rem;
+				}
+			}
 		}
 
 		.wpforms-container {

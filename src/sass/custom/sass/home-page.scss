@@ -6,7 +6,7 @@ main#front-page {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				@include padding(80, 0, 64, 0);
+				@include padding(170, 0, 64, 0);
 				h5 {
 					@include font-size(49.7);
 					background: linear-gradient(90deg, $primary, $secondary);
@@ -24,6 +24,13 @@ main#front-page {
 					text-transform: uppercase;
 					letter-spacing: #{toRem(-4)};
 					@include margin(0, 0, 20, 0);
+
+					@include set(991) {
+						text-align: center;
+					}
+					@include set(767) {
+						font-size: 4.525rem;
+					}
 				}
 				h4 {
 					span {
@@ -32,6 +39,10 @@ main#front-page {
 
 						&:not(:last-of-type) {
 							border-right: 1px solid $primary;
+						}
+
+						@include set(767) {
+							font-size: 1.8rem;
 						}
 					}
 				}
@@ -64,13 +75,17 @@ main#front-page {
 
 						&.slick-center {
 							height: #{toRem(460)} !important;
-							width: 50rem !important;
+							// width: 50rem !important;
 
 							div {
 								top: 0;
 								position: relative;
 								height: 100%;
 								transform: translateY(0);
+							}
+
+							@include set(991) {
+								width: auto;
 							}
 						}
 					}
@@ -89,6 +104,18 @@ main#front-page {
 						rgba($light, 1) 100%
 					);
 					right: 0;
+
+					&::before {
+						color: $secondary;
+						font-size: 4rem;
+						// color: $white;
+						font-weight: 900;
+						padding: 0.1rem 1.2rem;
+						right: 1.2rem;
+						top: 50%;
+						transform: translateY(-50%);
+						position: absolute;
+					}
 				}
 				&.slick-prev {
 					background: $light;
@@ -98,6 +125,17 @@ main#front-page {
 						rgba($light, 1) 100%
 					);
 					left: 0;
+					&::before {
+						color: $secondary;
+						font-size: 4rem;
+						// color: $white;
+						font-weight: 900;
+						padding: 0.1rem 1.2rem;
+						left: 1.2rem;
+						top: 50%;
+						transform: translateY(-50%);
+						position: absolute;
+					}
 				}
 			}
 		}
@@ -143,6 +181,10 @@ main#front-page {
 							line-height: 150%;
 							color: $black-50;
 						}
+
+						@include set(800) {
+							margin-top: 5rem;
+						}
 					}
 
 					&.about--section--img {
@@ -170,14 +212,25 @@ main#front-page {
 
 							&.interviews {
 								bottom: 3.5rem;
+								@include set(405) {
+									left: 2rem;
+								}
 							}
 							&.news {
 								bottom: 9.5rem;
 								right: 2rem;
+
+								@include set(405) {
+									right: 3rem;
+									bottom: 12.5rem;
+								}
 							}
 							&.media {
 								top: 5rem;
 								left: 3rem;
+								@include set(405) {
+									top: 2rem;
+								}
 							}
 
 							&::before {
@@ -204,6 +257,14 @@ main#front-page {
 							object-fit: contain;
 						}
 					}
+
+					@include set(800) {
+						width: 100%;
+					}
+				}
+
+				@include set(800) {
+					flex-direction: column-reverse;
 				}
 			}
 		}
@@ -233,6 +294,7 @@ main#front-page {
 			}
 		}
 		.section--content {
+			padding: 0 0.75rem;
 			.col-md-6 {
 				@include padding(0, 24, 0, 0);
 				.card--container {
@@ -302,6 +364,14 @@ main#front-page {
 					// margin-top: -10rem;
 					@include margin(-160, 0, 0, 0);
 					@include padding(0, 0, 0, 24);
+
+					@include set(767) {
+						margin: 0;
+						padding: 0;
+					}
+				}
+				@include set(767) {
+					padding: 0;
 				}
 			}
 

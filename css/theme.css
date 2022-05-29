@@ -16308,13 +16308,20 @@ strong {
 /*Convertion Ration sp to rem for html */
 /* 6. Header */
 header {
-  background-color: #fff6ff;
+  background-color: rgba(255, 246, 255, 0.4);
+}
+header nav {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  -webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(21px);
 }
 header nav div.container {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -ms-flex-align: center;
   align-items: center;
   min-height: 6.25rem;
@@ -16411,6 +16418,12 @@ header nav div.container .ham-burger .all-lines .line {
     background-color: #212529;
   }
 }
+header nav.header-sticky {
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+}
+header nav.header-sticky .container {
+  min-height: 5.25rem;
+}
 
 * {
   transition: all 0.2s ease-in-out;
@@ -16449,7 +16462,7 @@ a {
 }
 
 .page--header {
-  padding: 3.75rem 0rem 6.25rem 0rem;
+  padding: 10rem 0rem 6.25rem 0rem;
   background-color: #fff6ff;
   display: -ms-flexbox;
   display: flex;
@@ -16985,7 +16998,7 @@ main#front-page .hero--section .container .hero {
   flex-direction: column;
   -ms-flex-align: center;
   align-items: center;
-  padding: 5rem 0rem 4rem 0rem;
+  padding: 10.625rem 0rem 4rem 0rem;
 }
 main#front-page .hero--section .container .hero h5, main#front-page .hero--section .container .hero .h5 {
   font-size: 3.10625rem;
@@ -17007,12 +17020,27 @@ main#front-page .hero--section .container .hero h1, main#front-page .hero--secti
   letter-spacing: -0.25rem;
   margin: 0rem 0rem 1.25rem 0rem;
 }
+@media screen and (max-width: 991px) {
+  main#front-page .hero--section .container .hero h1, main#front-page .hero--section .container .hero .h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  main#front-page .hero--section .container .hero h1, main#front-page .hero--section .container .hero .h1 {
+    font-size: 4.525rem;
+  }
+}
 main#front-page .hero--section .container .hero h4 span, main#front-page .hero--section .container .hero .h4 span {
   font-size: 2.33125rem;
   padding: 0rem 1.25rem 0rem 1.25rem;
 }
 main#front-page .hero--section .container .hero h4 span:not(:last-of-type), main#front-page .hero--section .container .hero .h4 span:not(:last-of-type) {
   border-right: 1px solid #642e7c;
+}
+@media screen and (max-width: 767px) {
+  main#front-page .hero--section .container .hero h4 span, main#front-page .hero--section .container .hero .h4 span {
+    font-size: 1.8rem;
+  }
 }
 main#front-page .hero--section .img--slider {
   height: 38rem;
@@ -17048,7 +17076,6 @@ main#front-page .hero--section .img--slider .slick-list .slick-track .slick-slid
 }
 main#front-page .hero--section .img--slider .slick-list .slick-track .slick-slide.slick-center {
   height: 28.75rem !important;
-  width: 50rem !important;
 }
 main#front-page .hero--section .img--slider .slick-list .slick-track .slick-slide.slick-center div {
   top: 0;
@@ -17056,6 +17083,11 @@ main#front-page .hero--section .img--slider .slick-list .slick-track .slick-slid
   height: 100%;
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+@media screen and (max-width: 991px) {
+  main#front-page .hero--section .img--slider .slick-list .slick-track .slick-slide.slick-center {
+    width: auto;
+  }
 }
 main#front-page .hero--section .img--slider .slick-arrow {
   width: 15%;
@@ -17067,10 +17099,32 @@ main#front-page .hero--section .img--slider .slick-arrow.slick-next {
   background: linear-gradient(90deg, rgba(255, 246, 255, 0) 0%, #fff6ff 100%);
   right: 0;
 }
+main#front-page .hero--section .img--slider .slick-arrow.slick-next::before {
+  color: #ab397a;
+  font-size: 4rem;
+  font-weight: 900;
+  padding: 0.1rem 1.2rem;
+  right: 1.2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+}
 main#front-page .hero--section .img--slider .slick-arrow.slick-prev {
   background: #fff6ff;
   background: linear-gradient(270deg, rgba(255, 246, 255, 0) 0%, #fff6ff 100%);
   left: 0;
+}
+main#front-page .hero--section .img--slider .slick-arrow.slick-prev::before {
+  color: #ab397a;
+  font-size: 4rem;
+  font-weight: 900;
+  padding: 0.1rem 1.2rem;
+  left: 1.2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
 }
 main#front-page .about--section {
   padding: 6.25rem 0rem 6.25rem 0rem;
@@ -17112,6 +17166,11 @@ main#front-page .about--section .container .row .col-md-6.about--section--info p
   line-height: 150%;
   color: #867b8b;
 }
+@media screen and (max-width: 800px) {
+  main#front-page .about--section .container .row .col-md-6.about--section--info {
+    margin-top: 5rem;
+  }
+}
 main#front-page .about--section .container .row .col-md-6.about--section--img {
   position: relative;
 }
@@ -17140,13 +17199,29 @@ main#front-page .about--section .container .row .col-md-6.about--section--img di
 main#front-page .about--section .container .row .col-md-6.about--section--img div.interviews {
   bottom: 3.5rem;
 }
+@media screen and (max-width: 405px) {
+  main#front-page .about--section .container .row .col-md-6.about--section--img div.interviews {
+    left: 2rem;
+  }
+}
 main#front-page .about--section .container .row .col-md-6.about--section--img div.news {
   bottom: 9.5rem;
   right: 2rem;
 }
+@media screen and (max-width: 405px) {
+  main#front-page .about--section .container .row .col-md-6.about--section--img div.news {
+    right: 3rem;
+    bottom: 12.5rem;
+  }
+}
 main#front-page .about--section .container .row .col-md-6.about--section--img div.media {
   top: 5rem;
   left: 3rem;
+}
+@media screen and (max-width: 405px) {
+  main#front-page .about--section .container .row .col-md-6.about--section--img div.media {
+    top: 2rem;
+  }
 }
 main#front-page .about--section .container .row .col-md-6.about--section--img div::before {
   content: "";
@@ -17166,6 +17241,17 @@ main#front-page .about--section .container .row .col-md-6.about--section--img im
   height: 45.625rem;
   -o-object-fit: contain;
   object-fit: contain;
+}
+@media screen and (max-width: 800px) {
+  main#front-page .about--section .container .row .col-md-6 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  main#front-page .about--section .container .row {
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
 }
 main#front-page .news--section {
   padding: 6.25rem 0rem 6.25rem 0rem;
@@ -17191,6 +17277,9 @@ main#front-page .news--section h1.section--title::after, main#front-page .news--
   left: 0;
   border-radius: 999px;
   background: linear-gradient(90deg, #642e7c 0%, rgba(100, 46, 124, 0) 100%);
+}
+main#front-page .news--section .section--content {
+  padding: 0 0.75rem;
 }
 main#front-page .news--section .section--content .col-md-6 {
   padding: 0rem 1.5rem 0rem 0rem;
@@ -17251,6 +17340,17 @@ main#front-page .news--section .section--content .col-md-6 .card--container:hove
 main#front-page .news--section .section--content .col-md-6:nth-child(even) {
   margin: -10rem 0rem 0rem 0rem;
   padding: 0rem 0rem 0rem 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  main#front-page .news--section .section--content .col-md-6:nth-child(even) {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  main#front-page .news--section .section--content .col-md-6 {
+    padding: 0;
+  }
 }
 main#front-page .news--section .section--content .explore--more h1, main#front-page .news--section .section--content .explore--more .h1 {
   position: relative;
@@ -17339,9 +17439,15 @@ main#about-page .hero--content {
   padding: 5rem 0rem 5rem 0rem;
 }
 main#about-page .hero--content .container p {
-  font-size: 2.331875rem;
-  line-height: 120%;
+  font-size: 1.5rem;
+  line-height: 145%;
   color: #867b8b;
+}
+@media screen and (max-width: 425px) {
+  main#about-page .hero--content .container p {
+    font-size: 1.8rem;
+    line-height: 135%;
+  }
 }
 
 main#news-page .news--content {
@@ -17409,6 +17515,16 @@ main#news-page .news--content .container .col-md-4 .card--container:hover .card-
 main#news-page .news--content .container .col-md-4 .card--container:hover .card--info footer a {
   padding: 0rem 0.3125rem 0rem 0rem;
 }
+@media screen and (max-width: 768px) {
+  main#news-page .news--content .container .col-md-4 {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  main#news-page .news--content .container .col-md-4 {
+    width: 100%;
+  }
+}
 
 main#gallery-page .gallery--content {
   padding: 6.875rem 0rem 3.75rem 0rem;
@@ -17420,10 +17536,12 @@ main#gallery-page .gallery--content ul.links {
   padding: 0;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0rem 0rem 5rem 0rem;
+  margin: 0rem 0rem 3.75rem 0rem;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 main#gallery-page .gallery--content ul.links li {
-  margin: 0rem 0.3125rem 0rem 0.3125rem;
+  margin: 0rem 0.3125rem 1.25rem 0.3125rem;
 }
 main#gallery-page .gallery--content ul.links li a {
   cursor: pointer;
@@ -17447,9 +17565,24 @@ main#gallery-page .gallery--content .gallery--container .wrapper .item {
   margin: 0rem 0rem 2.5rem 0rem;
 }
 main#gallery-page .gallery--content .gallery--container .wrapper .item img {
-  width: 92%;
+  width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  padding: 0 1rem;
+}
+@media screen and (max-width: 768px) {
+  main#gallery-page .gallery--content .gallery--container .wrapper .item {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 375px) {
+  main#gallery-page .gallery--content .gallery--container .wrapper .item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    width: 100%;
+  }
 }
 
 header.single-header .container .row {
@@ -17605,6 +17738,15 @@ main#contact-page .contact--container .contact--details .contact--item h1, main#
   text-align: center;
   color: #642e7c;
   font-weight: 500;
+}
+@media screen and (max-width: 540px) {
+  main#contact-page .contact--container .contact--details {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  main#contact-page .contact--container .contact--details .contact--item {
+    margin-bottom: 2rem;
+  }
 }
 main#contact-page .contact--container .wpforms-container {
   width: 59.375rem;

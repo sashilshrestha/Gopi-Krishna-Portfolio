@@ -80,52 +80,52 @@
     <div class="news--section">
         <div class="container">
             <h1 class="section--title">Checkout My News/Blogs</h1>
-            <div class="container">
-                <div class="row section--content">
-                    <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'posts_per_page' => 4,
-                        'order' => 'DESC',
-                        'orderby' => 'publish_date',
 
-                    );
-                    $youtube_posts = new WP_Query($args);
+            <div class="row section--content">
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 4,
+                    'order' => 'DESC',
+                    'orderby' => 'publish_date',
 
-                    while ($youtube_posts->have_posts()) :
-                        $youtube_posts->the_post();
-                        // For Image Call
-                        $thumb_id = get_post_thumbnail_id();
-                        $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-                    ?>
-                        <!-- Loop Started -->
-                        <div class="col-md-6">
-                            <div class="card--container">
-                                <img src="<?php echo $thumb_url[0] ?>" alt="">
-                                <div class="bg--overlay"></div>
-                                <div class="card--info">
-                                    <a href="<?php the_permalink() ?>">
-                                        <h4><?php the_title() ?></h4>
-                                    </a>
-                                    <h5>
-                                        <?php
-                                        $content = get_the_content();
-                                        echo trim_data($content, 15, ' [...]')
-                                        ?></h5>
-                                </div>
+                );
+                $youtube_posts = new WP_Query($args);
+
+                while ($youtube_posts->have_posts()) :
+                    $youtube_posts->the_post();
+                    // For Image Call
+                    $thumb_id = get_post_thumbnail_id();
+                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+                ?>
+                    <!-- Loop Started -->
+                    <div class="col-md-6">
+                        <div class="card--container">
+                            <img src="<?php echo $thumb_url[0] ?>" alt="">
+                            <div class="bg--overlay"></div>
+                            <div class="card--info">
+                                <a href="<?php the_permalink() ?>">
+                                    <h4><?php the_title() ?></h4>
+                                </a>
+                                <h5>
+                                    <?php
+                                    $content = get_the_content();
+                                    echo trim_data($content, 15, ' [...]')
+                                    ?></h5>
                             </div>
                         </div>
-                        <!-- Loop Started -->
-                    <?php
-                    endwhile;
-                    wp_reset_postdata();
-                    ?>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6 explore--more">
-                        <h1>Explore More </h1>
                     </div>
+                    <!-- Loop Started -->
+                <?php
+                endwhile;
+                wp_reset_postdata();
+                ?>
+                <div class="col-md-6"></div>
+                <div class="col-md-6 explore--more">
+                    <h1></h1>
                 </div>
             </div>
+
         </div>
     </div>
 </main>

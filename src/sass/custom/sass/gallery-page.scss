@@ -6,10 +6,11 @@ main#gallery-page {
 			list-style: none;
 			padding: 0;
 			justify-content: center;
-			@include margin(0, 0, 80, 0);
+			@include margin(0, 0, 60, 0);
+			flex-wrap: wrap;
 
 			li {
-				@include margin(0, 5, 0, 5);
+				@include margin(0, 5, 20, 5);
 				a {
 					cursor: pointer;
 					@include padding(5, 15, 5, 15);
@@ -33,9 +34,19 @@ main#gallery-page {
 					@include margin(0, 0, 40, 0);
 
 					img {
-						width: 92%;
+						width: 100%;
 						// height: 30rem;
 						object-fit: cover;
+						padding: 0 1rem;
+					}
+
+					@include set(768) {
+						flex: 0 0 50%;
+						width: 50%;
+					}
+					@include set(375) {
+						flex: 0 0 100%;
+						width: 100%;
 					}
 				}
 			}

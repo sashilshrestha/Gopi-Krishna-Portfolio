@@ -71,6 +71,12 @@ main#news-page {
 						}
 					}
 				}
+				@include set(768) {
+					width: 50%;
+				}
+				@include set(425) {
+					width: 100%;
+				}
 			}
 		}
 	}
