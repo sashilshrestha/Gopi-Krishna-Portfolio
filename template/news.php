@@ -20,7 +20,7 @@ get_header();
                 $args = array(
                     'post_type' => 'post',
                     'post_status' => 'publish',
-                    'posts_per_page' => 4,
+                    'posts_per_page' => 6,
                     'order' => 'DESC',
                     'orderby' => 'publish_date',
                     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),

@@ -2,7 +2,7 @@ header.single-header {
 	// background-color: $darker;
 	.container {
 		.row {
-			@include padding(120, 0, 210, 0);
+			@include padding(170, 0, 210, 0);
 			flex-direction: column;
 
 			@include set(400) {

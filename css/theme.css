@@ -16517,6 +16517,23 @@ a {
 }
 
 /* 7. Footer */
+footer {
+  background-color: #642e7c;
+}
+footer .container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 3.125rem 0rem 3.125rem 0rem;
+}
+footer .container .social--icons {
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* 8. Mediaquery */
 @media screen and (min-width: 1200px) {
   .container {
@@ -17621,7 +17638,7 @@ main#gallery-page .gallery--content .gallery--container .wrapper .item img {
 }
 
 header.single-header .container .row {
-  padding: 7.5rem 0rem 13.125rem 0rem;
+  padding: 10.625rem 0rem 13.125rem 0rem;
   -ms-flex-direction: column;
   flex-direction: column;
 }
