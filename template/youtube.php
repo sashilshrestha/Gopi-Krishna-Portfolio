@@ -14,9 +14,9 @@ get_header();
         <h1><?php the_title() ?></h1>
     </div>
     <div class="gallery--content">
-        <ul class="links">
+        <!-- <ul class="links">
             <li><a data-filter="*" class="active">Refresh</a></li>
-        </ul>
+        </ul> -->
         <div class="gallery--container">
             <div class="container wrapper">
                 <!-- Post Calling Loop Started -->
@@ -36,7 +36,7 @@ get_header();
                     $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
                 ?>
                     <!-- Loop Started -->
-                    <div class="item"><a href="<?php the_title() ?>" class="videos-frame"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
+                    <div class="item"><a href="https://www.youtube.com/watch?v=kHevw2X6664" class="videos-frame"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
                     <!-- Loop Ended -->
                 <?php
                 endwhile;

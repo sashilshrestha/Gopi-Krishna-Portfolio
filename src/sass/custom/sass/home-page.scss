@@ -376,6 +376,8 @@ main#front-page {
 			}
 
 			.explore--more {
+				display: flex;
+				align-items: center;
 				h1 {
 					position: relative;
 					@include font-size(49.7);
@@ -384,8 +386,17 @@ main#front-page {
 					-webkit-text-fill-color: transparent;
 					font-weight: 900;
 					letter-spacing: #{toRem(-1)};
-					@include width(384);
-					@include margin(0, 0, 50, 0);
+					width: max-content;
+					@include margin(0, 20, 0, 0);
+				}
+				img {
+					@include height(40);
+				}
+
+				&:hover {
+					img {
+						transform: translateX(1rem);
+					}
 				}
 			}
 		}

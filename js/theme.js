@@ -12449,7 +12449,19 @@
 	    removalDelay: 160,
 	    preloader: false,
 	    fixedContentPos: false
-	  });
+	  }); // if (document.URL.indexOf("gallery") !== -1) {
+	  // 	// Set the URL to whatever it was plus "#".
+	  // 	url = document.URL + "#";
+	  // 	location = "#";
+	  // 	//Reload the page
+	  // }
+
+	  let galleryString = window.location.href.substr(-8);
+
+	  if (galleryString === "gallery/") {
+	    window.location = window.location + "#loaded";
+	    location.reload(true);
+	  }
 	});
 
 	var magnify = {};

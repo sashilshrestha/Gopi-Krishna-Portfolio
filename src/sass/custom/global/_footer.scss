@@ -1,13 +1,72 @@
-footer {
-	background-color: $primary;
+footer#footer {
+	background-color: $black;
 	.container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		@include padding(50, 0, 50, 0);
+		@include padding(80, 0, 40, 0);
+
+		h1 {
+			color: $white;
+			font-weight: 900;
+			@include font-size(52);
+			@include margin(0, 0, 20, 0);
+		}
+
+		p {
+			color: $black-10;
+			@include font-size(22);
+			line-height: 140%;
+			text-align: center;
+			padding: 0 15rem;
+			margin: 0 0 2rem 0;
+		}
+		h5 {
+			@include font-size(26);
+			color: $black-10;
+			@include margin(35, 0, 15, 0);
+		}
+		.social--icons {
+			@include margin(0, 0, 20, 0);
+			a {
+				@include margin(0, 5, 0, 5);
+				img {
+					@include width(45);
+					@include height(45);
+					object-fit: cover;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+		a {
+			&.btn-primary {
+				background-color: $secondary;
+			}
+		}
 
 		.social--icons {
 			display: flex;
+		}
+
+		.copyright--section {
+			@include margin(20, 0, 5, 0);
+			p {
+				margin: 0;
+				@include font-size(22);
+			}
+		}
+
+		.author--section {
+			font-style: italic;
+			color: $black-50;
+			@include font-size(20);
+
+			span {
+				color: $secondary;
+			}
 		}
 	}
 }

@@ -122,7 +122,9 @@
                 ?>
                 <div class="col-md-6"></div>
                 <div class="col-md-6 explore--more">
-                    <h1></h1>
+                    <h1>Explore More</h1>
+                    <?php $themefile = get_template_directory_uri(); ?>
+                    <img src="<?php echo $themefile; ?>/assets/icons/right-arrow.svg" alt="">
                 </div>
             </div>
 
