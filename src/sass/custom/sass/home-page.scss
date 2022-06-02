@@ -388,6 +388,10 @@ main#front-page {
 					letter-spacing: #{toRem(-1)};
 					width: max-content;
 					@include margin(0, 20, 0, 0);
+
+					@include set(768) {
+						font-size: 2rem;
+					}
 				}
 				img {
 					@include height(40);
