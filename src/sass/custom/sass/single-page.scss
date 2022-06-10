@@ -41,14 +41,65 @@ header.single-header {
 
 			.site-main {
 				article {
-					img.content-image {
-						@include height(553);
-						width: 100%;
-						object-fit: cover;
-						@include margin(0, 0, 40, 0);
-						border-radius: #{toRem(10)};
+					/* Featured Image */
+					.main--image {
+						img.content-image {
+							@include height(553);
+							width: 100%;
+							object-fit: cover;
+							@include margin(0, 0, 40, 0);
+							border-radius: #{toRem(10)};
+						}
+						.featured-div {
+							@include height(553);
+							@include margin(0, 0, 40, 0);
+							position: relative;
+
+							img.content-article {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								border-radius: #{toRem(10)};
+							}
+
+							.featured-overlay {
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								background-color: rgba(255, 255, 255, 0.75);
+								top: 0;
+								left: 0;
+								border-radius: #{toRem(10)};
+								cursor: zoom-in;
+
+								h1 {
+									font-size: 2rem;
+									top: 50%;
+									left: 0;
+									position: relative;
+									transform: rotate(-45deg) translateY(-50%);
+									color: $primary;
+									text-align: center;
+									width: max-content;
+									border-bottom: 2px dashed $primary;
+								}
+							}
+
+							@include set(768) {
+								height: 12rem;
+								a {
+									.featured-overlay {
+										h1 {
+											transform: rotate(0deg) translateY(-50%) translateX(-50%);
+											left: 50%;
+										}
+									}
+								}
+							}
+						}
 					}
 
+					/* Content */
 					.row {
 						.col-md-9 {
 							.entry-content {

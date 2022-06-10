@@ -79,3 +79,14 @@ a {
 		color: $secondary;
 	}
 }
+
+.wp-block-embed iframe {
+	width: 100%;
+}
+
+.mfp-title {
+	text-align: center !important;
+	font-weight: 900;
+	font-size: 1.6rem;
+	padding: 0.5rem 0;
+}

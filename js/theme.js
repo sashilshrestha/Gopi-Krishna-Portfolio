@@ -12435,6 +12435,11 @@
 
 	  $(".magnify").magnificPopup({
 	    type: "image",
+	    image: {
+	      titleSrc: function (item) {
+	        return item.el.attr("title");
+	      }
+	    },
 	    gallery: {
 	      enabled: true
 	    },
@@ -12456,9 +12461,9 @@
 	  // 	//Reload the page
 	  // }
 
-	  let galleryString = window.location.href.substr(-8);
+	  let currentURL = window.location.href.substr(-8);
 
-	  if (galleryString === "gallery/") {
+	  if (currentURL === "gallery/" || currentURL === "youtube/") {
 	    window.location = window.location + "#loaded";
 	    location.reload(true);
 	  }

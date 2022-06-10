@@ -5,10 +5,19 @@
     <div class="hero--section">
         <div class="container">
             <div class="hero">
-                <h5>Hello, I am</h5>
-                <h1>Gopi Krishna Chapagain</h1>
-                <h4><span>Journalist</span><span>Journalist</span><span>Journalist</span></h4>
+                <h5><?php echo get_field('greetings'); ?></h5>
+                <h1><?php echo get_field('name'); ?></h1>
+                <h4>
+                    <?php
+                    for ($x = 1; $x <= 4; $x++) {
+                    ?>
+                        <span><?php echo get_field('post_' . "$x" . '') ?></span>
+                    <?php
+                    }
+                    ?>
+                </h4>
             </div>
+
         </div>
         <div class="img--slider">
             <!-- Post Calling Loop Started -->
@@ -79,7 +88,7 @@
     <!-- About Section -->
     <div class="news--section">
         <div class="container">
-            <h1 class="section--title">Checkout My News/Blogs</h1>
+            <h1 class="section--title">Checkout My News</h1>
 
             <div class="row section--content">
                 <?php
@@ -122,7 +131,11 @@
                 ?>
                 <div class="col-md-6"></div>
                 <div class="col-md-6 explore--more">
-                    <h1>Explore More</h1>
+                    <?php $siteUrl = get_site_url(); ?>
+                    <a href="<?php echo  $siteUrl . '/news'; ?>">
+
+                        <h1>Explore More</h1>
+                    </a>
                     <?php $themefile = get_template_directory_uri(); ?>
                     <img src="<?php echo $themefile; ?>/assets/icons/right-arrow.svg" alt="">
                 </div>

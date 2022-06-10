@@ -46,7 +46,7 @@ get_header();
                                 <p>In the exhibition, most of the rhythmic paintings are created in the abstract form where their composition an</p>
                                 <footer>
                                     <p><?php echo get_the_date() ?></p>
-                                    <a href="">
+                                    <a href="<?php the_permalink(); ?>">
                                         <?php $themefile = get_template_directory_uri(); ?>
                                         <img src="<?php echo $themefile; ?>/assets/icons/right-arrow.svg" alt="">
                                     </a>

@@ -19,7 +19,26 @@ $current_url = substr($current_url, 7);
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<img src="<?php echo $thumb_url[0]; ?>" alt="" class="content-image">
+	<div class="row main--image">
+		<?php $articleSrc = get_field('published_article'); ?>
+		<div class="<?php echo $articleSrc ? 'col-md-9' : 'col-md-12' ?>"><img src="<?php echo $thumb_url[0]; ?>" alt="" class="content-image"></div>
+		<?php
+		if ($articleSrc) {
+		?>
+			<div class="col-md-3">
+				<div class="featured-div">
+					<img src="<?php echo $articleSrc; ?>" alt="" class="content-article">
+					<a href="<?php echo $articleSrc; ?>" class="magnify">
+						<div class="featured-overlay">
+							<h1>View Featured Article</h1>
+						</div>
+					</a>
+				</div>
+			</div>
+		<?php
+		} ?>
+
+	</div>
 
 	<div class="row">
 		<div class="col-md-9">
