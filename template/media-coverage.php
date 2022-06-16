@@ -43,7 +43,7 @@ get_header();
                                 <a href="<?php the_permalink() ?>">
                                     <h1><?php the_title() ?></h1>
                                 </a>
-                                <p>In the exhibition, most of the rhythmic paintings are created in the abstract form where their composition an</p>
+                                <p><?php echo trim_data(get_the_content(), 12, ' [...]') ?></p>
                                 <footer>
                                     <p><?php echo get_the_date() ?></p>
                                     <a href="<?php the_permalink(); ?>">

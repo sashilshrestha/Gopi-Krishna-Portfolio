@@ -30,6 +30,7 @@ defined('ABSPATH') || exit;
 		<header id="wrapper-navbar">
 			<nav id="main-nav">
 				<div class="container">
+					<?php echo get_custom_logo(); ?>
 					<!-- The WordPress Menu goes here -->
 					<?php
 					wp_nav_menu(
@@ -52,7 +53,7 @@ defined('ABSPATH') || exit;
 							<div class="line line3"></div>
 						</div>
 					</div>
-					<div class="blur-bg"></div>
+					<!-- <div class="blur-bg"></div> -->
 				</div><!-- .container -->
 			</nav>
 		</header>

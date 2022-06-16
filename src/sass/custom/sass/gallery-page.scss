@@ -1,22 +1,30 @@
 main#gallery-page {
 	.gallery--content {
-		@include padding(110, 0, 60, 0);
+		@include padding(110, 0, 0, 0);
+		.subscribe--btn {
+			display: flex;
+			justify-content: center;
+			@include padding(0, 0, 60, 0);
+			a {
+				img {
+					height: 5rem;
+					width: 100%;
+				}
+			}
+		}
 		ul.links {
 			display: flex;
 			list-style: none;
 			padding: 0;
 			justify-content: center;
-			@include margin(0, 0, 60, 0);
-			flex-wrap: wrap;
 
 			li {
-				@include margin(0, 5, 20, 5);
+				@include margin(0, 2, 0, 2);
 				a {
 					cursor: pointer;
 					@include padding(5, 15, 5, 15);
 					border-radius: #{toRem(4)};
 					color: $black;
-					@include font-size(26);
 
 					&.active {
 						background-color: $primary;
@@ -28,6 +36,8 @@ main#gallery-page {
 		.gallery--container {
 			.wrapper {
 				display: flex;
+				padding-top: 3.5rem;
+
 				.item {
 					flex: 0 0 33.333333%;
 					width: 33.333333%;

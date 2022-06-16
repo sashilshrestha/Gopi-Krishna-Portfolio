@@ -1,0 +1,167 @@
+main#blogs-page {
+	.blogs--content {
+		@include padding(80, 0, 80, 0);
+		.container {
+			.carding {
+				@include margin(0, 0, 20, 0);
+				.card--container {
+					border-radius: #{toRem(10)};
+					box-shadow: 0px 4px 30px rgba($color: #000000, $alpha: 0.05);
+					transition: all 0.3s ease-in-out;
+
+					.card--img {
+						border-radius: #{toRem(10)} #{toRem(10)} 0 0;
+						overflow: hidden;
+						img {
+							width: 100%;
+							@include height(298);
+							object-fit: cover;
+
+							&.image {
+								height: 12rem;
+							}
+						}
+					}
+					.card--info {
+						@include padding(20, 20, 20, 20);
+
+						h1 {
+							@include font-size(24);
+							color: $black;
+							@include margin(0, 0, 12, 0);
+							line-height: 120%;
+							cursor: pointer;
+						}
+						p {
+							@include font-size(18);
+							color: $black-50;
+							@include margin(0, 0, 20, 0);
+							line-height: 130%;
+						}
+						footer {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+
+							p {
+								@include font-size(16);
+								color: $secondary;
+								font-weight: 700;
+								margin: 0;
+							}
+
+							a {
+								@include font-size(14);
+								@include padding(0, 15, 0, 0);
+								img {
+									height: 1.8rem;
+								}
+							}
+						}
+					}
+
+					&:hover {
+						.card--img {
+							img {
+								transform: scale(1.1);
+							}
+						}
+						.card--info {
+							footer {
+								a {
+									@include padding(0, 5, 0, 0);
+								}
+							}
+						}
+					}
+				}
+				@include set(768) {
+					// width: 50%;
+				}
+				@include set(425) {
+					width: 100%;
+				}
+			}
+			.side-title {
+				h3 {
+					margin-bottom: 0.8rem;
+				}
+			}
+			.side-posts {
+				.side-card {
+					// display: flex;
+					@include margin(0, 0, 10, 0);
+					padding: 0.6rem 0;
+					&__img {
+						img {
+							width: 100%;
+							height: 4rem;
+							object-fit: cover;
+							border-radius: #{toRem(4)};
+
+							@include set(768) {
+								height: 10rem;
+								margin: 0 0 0.5rem 0;
+							}
+
+							@include set(500) {
+								height: 7rem;
+								@include margin(0, 0, 10, 0);
+							}
+						}
+					}
+					&__info {
+						@include padding(0, 0, 0, 0);
+
+						@include set(768) {
+							padding: 0 0.75rem;
+						}
+
+						h3 {
+							@include font-size(16);
+							line-height: 120%;
+							@include margin(0, 0, 0, 0);
+							color: $black;
+							@include set(500) {
+								@include font-size(22);
+							}
+						}
+
+						.topic {
+							a {
+								display: flex;
+								span {
+									@include font-size(12);
+									color: $primary;
+									text-decoration: underline;
+									font-weight: 700;
+
+									@include set(500) {
+										@include font-size(16);
+									}
+								}
+							}
+						}
+
+						p {
+							font-size: 0.8rem;
+							color: $black-50;
+							margin: 0;
+							line-height: 120%;
+						}
+					}
+
+					@include set(768) {
+						margin: 0 0 1rem 0;
+					}
+				}
+
+				@include set(768) {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					grid-column-gap: #{toRem(25)};
+				}
+			}
+		}
+	}
+}

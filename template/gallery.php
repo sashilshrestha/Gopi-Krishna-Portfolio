@@ -50,7 +50,7 @@ get_header();
 
                 ?>
                     <!-- Loop Started -->
-                    <div class="<?php print_r($categories[0]->name); ?> item"><a href="<?php echo $thumb_url[0]; ?>" class="magnify" title="Into The Blue"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
+                    <div class="<?php print_r($categories[0]->name); ?> item"><a href="<?php echo $thumb_url[0]; ?>" class="magnify" title="<?php the_title(); ?>"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
                     <!-- Loop Ended -->
                 <?php
                 endwhile;

@@ -169,6 +169,27 @@ function gk_custom_media_coverage()
 }
 add_action('init', 'gk_custom_media_coverage');
 
+// ----------------------------- Custom blog post type -----------------------------
+function gk_custom_blogs()
+{
+	register_post_type('blogs', [
+		'rewrite' => ['slug' => 'Blogs'],
+		'labels' => [
+			'name' => 'Blogs',
+			'singular_name' => 'Blog',
+			'add_new_item' => 'Add New Blog',
+			'edit_item' => 'Edit Blog',
+		],
+		'menu_icon' => 'dashicons-welcome-write-blog',
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true,
+		'menu_position' => 14,
+		'supports' => ['title', 'editor', 'thumbnail', 'page-attributes', 'taxonomy'],
+	]);
+}
+add_action('init', 'gk_custom_blogs');
+
 // ----------------------------- Custom Taxonomy for Custom Post -----------------------------
 function taxonomies_photos()
 {

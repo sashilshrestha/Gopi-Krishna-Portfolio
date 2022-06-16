@@ -14,9 +14,10 @@ get_header();
         <h1><?php the_title() ?></h1>
     </div>
     <div class="gallery--content">
-        <!-- <ul class="links">
-            <li><a data-filter="*" class="active">Refresh</a></li>
-        </ul> -->
+        <?php $themefile = get_template_directory_uri(); ?>
+        <div class="subscribe--btn">
+            <a href="https://www.youtube.com/c/ArtistKhabar?sub_confirmation=1" target="_blank"><img src="<?php echo $themefile; ?>/assets/images/subscribe.png" alt=""></a>
+        </div>
         <div class="gallery--container">
             <div class="container wrapper">
                 <!-- Post Calling Loop Started -->
@@ -24,8 +25,8 @@ get_header();
                 $args = array(
                     'post_type' => 'youtube',
                     'posts_per_page' => -1,
-                    'order' => 'ASC',
-                    'orderby' => 'menu_order',
+                    'order' => 'DESC',
+                    'orderby' => 'published_date',
                 );
                 $allposts = new WP_Query($args);
 
@@ -36,7 +37,7 @@ get_header();
                     $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
                 ?>
                     <!-- Loop Started -->
-                    <div class="item"><a href="https://www.youtube.com/watch?v=kHevw2X6664" class="videos-frame"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
+                    <div class="item"><a href="<?php echo get_field('youtube_link') ?>" class="videos-frame"><img src="<?php echo $thumb_url[0]; ?>" alt=""></a></div>
                     <!-- Loop Ended -->
                 <?php
                 endwhile;

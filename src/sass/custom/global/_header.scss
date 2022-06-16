@@ -10,9 +10,16 @@ header {
 		div.container {
 			display: flex;
 			// justify-content: center;
-			justify-content: flex-end;
+			justify-content: space-between;
 			align-items: center;
 			min-height: #{toRem(100)};
+
+			.navbar-brand {
+				img {
+					height: 4rem;
+					width: 100%;
+				}
+			}
 
 			.menu-primary-container {
 				.nav-links {
@@ -74,7 +81,7 @@ header {
 						top: 0;
 						right: 0;
 						bottom: 0;
-						background-color: rgb(255, 242, 242);
+						background-color: #fff6ff;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
